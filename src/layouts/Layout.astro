@@ -1,22 +1,99 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>IruyCode</title>
+</head>
+
+<body>
+    <Header />
+    <slot />
+    <Footer />
+</body>
+
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+<script is:inline>
+    const h1Target = document.getElementById("typing-h1");
+    const pTarget = document.getElementById("typing-p");
+
+    const h1Lines = [
+        'Sou o <span class="text-cyan-400 animate-pulse">Yuri Banzato</span>,',
+        'Desenvolvedor de Software.'
+    ];
+    const pLines = [
+        'Especializado em aplicações web modernas,',
+        'interfaces limpas e soluções escaláveis.'
+    ];
+
+    let lineIndex = 0;
+    let charIndex = 0;
+    let currentLine = '';
+    let currentTarget = h1Target;
+    let lineArray = h1Lines;
+
+    function typeLine() {
+        if (lineIndex < lineArray.length) {
+            currentLine = lineArray[lineIndex];
+
+            if (charIndex <= currentLine.length) {
+                currentTarget.innerHTML = lineArray
+                    .slice(0, lineIndex)
+                    .join('<br>') + '<br>' + currentLine.slice(0, charIndex);
+
+                charIndex++;
+                setTimeout(typeLine, 40);
+            } else {
+                lineIndex++;
+                charIndex = 0;
+                setTimeout(typeLine, 300);
+            }
+        } else if (currentTarget === h1Target) {
+            // Passa para o parágrafo
+            currentTarget = pTarget;
+            lineArray = pLines;
+            lineIndex = 0;
+            charIndex = 0;
+            setTimeout(typeLine, 300);
+        }
+    }
+
+    typeLine();
+</script>
+
+<script is:inline>
+    const flipCard = document.getElementById("flip-card");
+    const flipInner = document.getElementById("flip-inner");
+
+    flipCard.addEventListener("click", () => {
+        flipInner.classList.toggle("rotate-y-180");
+    });
+</script>
+
+
+
+<script>
+    const langToggle = document.getElementById('langToggle');
+    const langMenu = document.getElementById('langMenu');
+
+    langToggle.addEventListener('click', () => {
+        langMenu.classList.toggle('hidden');
+    });
+
+    // Fecha o menu se clicar fora
+    document.addEventListener('click', (e) => {
+        if (!langToggle.contains(e.target) && !langMenu.contains(e.target)) {
+            langMenu.classList.add('hidden');
+        }
+    });
+</script>
