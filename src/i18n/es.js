@@ -1,33 +1,34 @@
 export default {
-  greeting: "Bem-vindo ao meu portfólio",
+  greeting: "Bien-vienido ao meu portfólio",
   description: "Desenvolvedor Web Full Stack",
 
   menu: {
-    home: "Início",
-    about: "Sobre",
-    works: "Trabalhos",
-    projects: "Projetos",
-    contacts: "Contatos"
+    home: "Inicio",
+    about: "Acerca de",
+    works: "Trabajos",
+    projects: "Proyectos",
+    contacts: "Contactos"
   },
 
   home: {
-    title: 'Sou o <span class="text-cyan-400 animate-pulse">Yuri Banzato</span>,',
-    p: 'Especializado em aplicações web modernas, interfaces limpas e soluções escaláveis.'
+    click: "Clique para ver outro lado",
+    title: 'Soy <span class="text-cyan-400 animate-pulse">Yuri Banzato</span>, Desarrollador de Software.',
+    p: 'Especializado en aplicaciones web modernas, interfaces limpias y soluciones escalables.'
   },
 
-   about: {
-    title: "Sobre Mim",
+    about: {
+    title: "Acerca de Mí",
     who: {
-      title: "Quem Sou",
-      text: `Jovem entusiasta de tecnologia com foco em desenvolvimento web.
-            Participo de eventos, formações e gosto de estar sempre a aprender.
-            Atualmente trabalho na ISPT Group em projetos web e Iots.
-            Apaixonado por transformar ideias em soluções reais.`
+      title: "Quién Soy",
+      text: `Joven entusiasta de tecnología con foco en desarrollo web.
+            Participo de eventos, formaciones y me gusta estar siempre aprendiendo.
+            Actualmente trabajo en ISPT Group en proyectos web e IoT.
+            Apasionado por transformar ideas en soluciones reales.`
     },
     skills: {
       title: "Habilidades",
-      backend: "Desenvolvimento Web (Back-end)",
-      js: "Tecnologias JavaScript (MERN)",
+      backend: "Desarrollo Web (Back-end)",
+      js: "Tecnologías JavaScript (MERN)",
       items: {
         php: "PHP",
         laravel: "Laravel",
@@ -38,7 +39,7 @@ export default {
         js: "JavaScript"
       }
     },
-    experienceTitle: "Experiência Profissional",
+    experienceTitle: "Experiencia Profesional",
     experiences: [
       {
         title: "Estágio de Desenvolvedor Full Stack",
@@ -50,26 +51,26 @@ export default {
                       Ganhei bastante experiência prática no dia a dia com projetos reais.`
       },
       {
-        title: "Desenvolvedor Full Stack e Administração de Sistemas",
+        title: "Desarrollador Full Stack y Administración de Sistemas",
         company: "ISPT Group, Departamento de C&D",
-        period: "2023 - Atualmente",
-        description: `Na ISPT Group, desenvolvo aplicações web, IoT e sistemas internos.
-                      Também colaboro na manutenção do servidor do departamento.
-                      O principal objetivo do departamento é criar novos produtos para apoiar os processos
-                      e aumentar a eficiência da empresa.`
+        period: "2023 - Actualmente",
+        description: `En ISPT Group, desarrollo aplicaciones web, IoT y sistemas internos.
+                      También colaboro en el mantenimiento del servidor del departamento.
+                      El principal objetivo del departamento es crear nuevos productos para apoyar los procesos
+                      y aumentar la eficiencia de la empresa.`
       }
     ],
-    educationTitle: "Educação e Cursos",
+    educationTitle: "Educación y Cursos",
     education: [
       {
-        title: "Técnico em Gestão e Programação de Sistemas Informáticos",
+        title: "Técnico en Gestión y Programación de Sistemas Informáticos",
         institution: "Seomara da Costa Primo",
         period: "2017 - 2020",
-        description: `Curso profissional com foco em programação (C++/JS), servidores e hardware.
-                      Projeto final desenvolvido em Laravel e disponível no GitHub.`
+        description: `Curso profesional con foco en programación (C++/JS), servidores y hardware.
+                      Proyecto final desarrollado en Laravel y disponible en GitHub.`
       },
       {
-        title: "Curso Avançado de PHP",
+        title: "Curso Avanzado de PHP",
         institution: "Anpri",
         period: "2020",
         description: `Aprofundamento em Laravel, incluindo testes, cache e otimização.
@@ -120,24 +121,24 @@ export default {
 
   footer: {
     about: "Sobre",
-    aboutText: "Desenvolvedor web full stack apaixonado por criar soluções inovadoras e experiências digitais únicas.",
-    quickLinks: "Links Rápidos",
-    services: "Serviços",
-    newsletter: "Newsletter",
-    newsletterText: "Receba atualizações sobre novos projetos e tecnologias.",
-    emailPlaceholder: "Seu email",
-    subscribe: "Inscrever",
-    copyright: "Todos os direitos reservados.",
-    terms: "Termos de Uso",
-    privacy: "Política de Privacidade",
+    aboutText: "Desarrollador web full stack apasionado por crear soluciones innovadoras y experiencias digitales únicas.",
+    quickLinks: "Enlaces Rápidos",
+    services: "Servicios",
+    newsletter: "Boletín",
+    newsletterText: "Recibe actualizaciones sobre nuevos proyectos y tecnologías.",
+    emailPlaceholder: "Tu correo",
+    subscribe: "Suscribirse",
+    copyright: "Todos los derechos reservados.",
+    terms: "Términos de Uso",
+    privacy: "Política de Privacidad",
     links: {
-      home: "Home",
-      about: "Sobre Mim",
-      projects: "Projetos",
-      works: "Trabalhos",
-      contact: "Contato"
+      home: "Inicio",
+      about: "Sobre Mí",
+      projects: "Proyectos",
+      works: "Trabajos",
+      contact: "Contacto"
     },
-    servicesList: ["Desenvolvimento Web", "Aplicações Mobile", "UI/UX Design", "Consultoria"]
+    servicesList: ["Desarrollo Web", "Aplicaciones Móviles", "Diseño UI/UX", "Consultoría"]
   }
 
 };

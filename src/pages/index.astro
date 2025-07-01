@@ -1,0 +1,12 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Home from "../components/Portfolio/Home.astro";
+
+const lang = "pt";
+import pt from "../i18n/pt.js";
+const t = pt; // ou lógica dinâmica
+---
+
+<Layout lang={lang} t={t}>
+    <Home lang={lang} t={t} />
+</Layout>
