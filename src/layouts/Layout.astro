@@ -9,6 +9,16 @@ import es from "../i18n/es.js";
 
 const { lang = "pt" } = Astro.props;
 const t = lang === "en" ? en : lang === "es" ? es : pt;
+
+import 'aos/dist/aos.css';
+
+if (typeof window !== "undefined") {
+  AOS.init({
+    duration: 800,
+    once: true,
+  });
+}
+
 ---
 
 <!doctype html>
@@ -29,6 +39,9 @@ const t = lang === "en" ? en : lang === "es" ? es : pt;
 </body>
 
 </html>
+
+<script type="module" src="/src/scripts/aos-init.js" client:load></script>
+
 
 
 

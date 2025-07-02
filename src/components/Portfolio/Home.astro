@@ -47,13 +47,13 @@ const { t } = Astro.props;
     <!-- Sobre Mim -->
     <section id="about" class="min-h-screen py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12">
+            <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">
                 {t.about.title}
             </h2>
 
             <!-- Informações Pessoais -->
             <div class="grid md:grid-cols-2 gap-8 mb-16">
-                <div class="space-y-4 p-6 bg-gray-50 rounded-xl">
+                <div class="space-y-4 p-6 bg-gray-50 rounded-xl" data-aos="fade-right">
                     <h3 class="text-2xl font-semibold text-gray-800">
                         {t.about.who.title}
                     </h3>
@@ -62,44 +62,532 @@ const { t } = Astro.props;
                     </p>
                 </div>
 
-                <div class="space-y-4 p-6 bg-gray-50 rounded-xl">
+                <div class="space-y-4 p-6 bg-gray-50 rounded-xl" data-aos="fade-left">
                     <h3 class="text-2xl font-semibold text-gray-800">
                         {t.about.skills.title}
                     </h3>
 
                     <!-- Desenvolvimento Web (PHP/Laravel) -->
-                    <div>
+                    <div data-aos="zoom-in-up">
                         <h4 class="text-md font-medium text-blue-700 mb-2">
                             {t.about.skills.backend}
                         </h4>
                         <div class="flex flex-wrap gap-2">
-                            <span
-                                class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">{t.about.skills.items.php}</span>
-                            <span
-                                class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">{t.about.skills.items.laravel}</span>
-                            <span
-                                class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">{t.about.skills.items.mysql}</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
+                                {t.about.skills.items.php}
+                            </span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
+                                {t.about.skills.items.laravel}
+                            </span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
+                                {t.about.skills.items.mysql}
+                            </span>
                         </div>
                     </div>
 
                     <!-- Desenvolvimento Web (Front-end / Fullstack JS) -->
-                    <div>
+                    <div data-aos="zoom-in-up" data-aos-delay="100">
                         <h4 class="text-md font-medium text-green-700 mb-2">
                             {t.about.skills.js}
                         </h4>
                         <div class="flex flex-wrap gap-2">
-                            <span
-                                class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">{t.about.skills.items.react}</span>
-                            <span
-                                class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">{t.about.skills.items.express}</span>
-                            <span
-                                class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">{t.about.skills.items.mongo}</span>
-                            <span
-                                class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">{t.about.skills.items.js}</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
+                                {t.about.skills.items.react}
+                            </span>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
+                                {t.about.skills.items.express}
+                            </span>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
+                                {t.about.skills.items.mongo}
+                            </span>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
+                                {t.about.skills.items.js}
+                            </span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Trabalhos -->
+    <section id="projects" class="min-h-screen py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Trabalhos Realizados</h2>
+
+            <!-- Grid de Projetos -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Projeto 1 -->
+                <div class="group relative bg-white rounded-xl shadow-lg overflow-hidden" data-aos="zoom-in-up"
+                    data-aos-delay="100" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                    <!-- Imagem Principal + Botão Lupa Mobile -->
+                    <div class="relative h-64 overflow-hidden flex items-center justify-center bg-white">
+                        <img src="/imgs/jedicon/logo/logo_jedicon.png" alt="JediconPT_logo"
+                            class="max-h-40 w-auto object-contain mx-auto" />
+                        <!-- Botão Lupa Mobile -->
+                        <button type="button"
+                            class="absolute right-2 top-2 md:hidden bg-white/80 rounded-full p-2 shadow show-carousel-btn"
+                            aria-label="Ver imagens">
+                            <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                        <!-- Botão Galeria Mobile -->
+                        <button type="button"
+                            class="absolute right-2 top-2 md:hidden bg-white/80 rounded-full p-2 shadow show-carousel-btn"
+                            aria-label="Ver galeria de imagens" title="Ver galeria de imagens">
+                            <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <rect x="3" y="5" width="18" height="14" rx="2" stroke-width="2" />
+                                <path d="M21 19l-5.5-7-4.5 6-3-4-4 5" stroke-width="2" />
+                                <circle cx="8.5" cy="10.5" r="1.5" stroke-width="2" />
+                            </svg>
+                        </button>
+                    </div>
+                    <!-- Carrossel de Imagens (Desktop: hover, Mobile: toggle) -->
+                    <div
+                        class="carousel-overlay absolute inset-0 z-20 flex items-center justify-center bg-black/80 opacity-0 pointer-events-none transition-opacity duration-300 group-hover:opacity-100 group-hover:pointer-events-auto md:group-hover:opacity-100 md:group-hover:pointer-events-auto">
+                        <div class="relative w-full h-full flex flex-col justify-center">
+                            <div class="slides-container h-full">
+                                <div class="slide absolute inset-0 opacity-0 transition-opacity duration-500">
+                                    <img src="/imgs/jedicon/Imgs/Picture1.png" alt="Slide 1"
+                                        class="w-full h-full object-contain">
+                                </div>
+                                <div class="slide absolute inset-0 opacity-0 transition-opacity duration-500">
+                                    <img src="/imgs/jedicon/Imgs/Picture2.png" alt="Slide 2"
+                                        class="w-full h-full object-contain">
+                                </div>
+                                <div class="slide absolute inset-0 opacity-0 transition-opacity duration-500">
+                                    <img src="/imgs/jedicon/Imgs/Picture3.png" alt="Slide 3"
+                                        class="w-full h-full object-contain">
+                                </div>
+                                <div class="slide absolute inset-0 opacity-0 transition-opacity duration-500">
+                                    <img src="/imgs/jedicon/Imgs/Picture4.png" alt="Slide 4"
+                                        class="w-full h-full object-contain">
+                                </div>
+                                <div class="slide absolute inset-0 opacity-0 transition-opacity duration-500">
+                                    <img src="/imgs/jedicon/Imgs/Picture5.png" alt="Slide 5"
+                                        class="w-full h-full object-contain">
+                                </div>
+                                <div class="slide absolute inset-0 opacity-0 transition-opacity duration-500">
+                                    <img src="/imgs/jedicon/Imgs/Picture6.png" alt="Slide 6"
+                                        class="w-full h-full object-contain">
+                                </div>
+                            </div>
+                            <!-- Navegação do Carrossel -->
+                            <button
+                                class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 rounded-full p-2 transition-colors">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 19l-7-7 7-7" />
+                                </svg>
+                            </button>
+                            <button
+                                class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 rounded-full p-2 transition-colors">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                            <!-- Botão Fechar Mobile -->
+                            <button type="button"
+                                class="absolute top-2 right-2 md:hidden bg-white/80 rounded-full p-2 shadow close-carousel-btn"
+                                aria-label="Fechar imagens">
+                                <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <line x1="6" y1="6" x2="18" y2="18"
+                                        stroke-width="2" />
+                                    <line x1="6" y1="18" x2="18" y2="6"
+                                        stroke-width="2" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Informações do Projeto -->
+                    <div class="p-6 pb-0">
+                        <!-- Cabeçalho do Trabalho -->
+                        <div class="p-6 border-b border-gray-200">
+                            <div class="flex flex-col gap-2">
+                                <h3 class="text-xl font-bold text-gray-800">JediconPT</h3>
+                                <div class="flex items-center gap-4">
+                                    <span
+                                        class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Concluído</span>
+                                    <span class="text-gray-500">2025</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4 mt-4">
+                            Estive envolvido na organização da primeira Jedicon em Portugal, um evento dedicado ao
+                            universo Star Wars. Fui responsável pelo desenvolvimento do site, sistema de bilhetes,
+                            áreas interativas como quiz e sorteio, além de criar um dashboard completo para os
+                            organizadores gerirem o evento.
+                        </p>
+                    </div>
+                    <!-- Link fixo na base do card -->
+                    <div class="p-6 pt-4 relative z-30 bg-white">
+                        <div class="flex gap-4">
+                            <a href="https://jedicon.pt" target="_blank"
+                                class="inline-flex items-center text-blue-600 hover:text-blue-800">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M10.59 13.41a1 1 0 0 0 1.41 1.41l4.3-4.3a1 1 0 0 0-1.41-1.41l-4.3 4.3zM8.59 16.41a3 3 0 0 1 0-4.24l1.42-1.42a1 1 0 0 0-1.41-1.41l-1.42 1.42a5 5 0 0 0 0 7.07 5 5 0 0 0 7.07 0l1.42-1.42a1 1 0 1 0-1.41-1.41l-1.42 1.42a3 3 0 0 1-4.25 0zm6.82-8.82a3 3 0 0 1 4.24 0 3 3 0 0 1 0 4.24l-1.42 1.42a1 1 0 1 0 1.41 1.41l1.42-1.42a5 5 0 0 0-7.07-7.07l-1.42 1.42a1 1 0 1 0 1.41 1.41l1.43-1.41z" />
+                                </svg>
+                                Visitar Site
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card para Próximos Trabalhos -->
+                <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl shadow-xl overflow-hidden border-2 border-dashed border-gray-300"
+                    data-aos="flip-left" data-aos-delay="600" data-aos-duration="1000"
+                    data-aos-easing="ease-out-cubic">
+                    <div class="h-full flex flex-col items-center justify-center p-8 text-center">
+                        <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mb-4">
+                            <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Próximos Trabalhos</h3>
+                        <p class="text-gray-600 mb-4">
+                            Em breve, novos trabalhos serão adicionados aqui.
+                            Fique ligado para ver mais projetos!
+                        </p>
+                        <div class="flex gap-2">
+                            <span class="px-3 py-1 bg-gray-200 text-gray-600 rounded-full text-sm">Em breve</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-600 rounded-full text-sm">Novos
+                                projetos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card para Próximos Trabalhos -->
+                <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl shadow-xl overflow-hidden border-2 border-dashed border-gray-300"
+                    data-aos="flip-left" data-aos-delay="600" data-aos-duration="1000"
+                    data-aos-easing="ease-out-cubic">
+                    <div class="h-full flex flex-col items-center justify-center p-8 text-center">
+                        <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mb-4">
+                            <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Próximos Trabalhos</h3>
+                        <p class="text-gray-600 mb-4">
+                            Em breve, novos trabalhos serão adicionados aqui.
+                            Fique ligado para ver mais projetos!
+                        </p>
+                        <div class="flex gap-2">
+                            <span class="px-3 py-1 bg-gray-200 text-gray-600 rounded-full text-sm">Em breve</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-600 rounded-full text-sm">Novos
+                                projetos</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projetos -->
+    <section id="works" class="min-h-screen py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Projetos</h2>
+
+            <!-- Grid de Trabalhos -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Trabalho 1 -->
+                <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl shadow-xl overflow-hidden"
+                    data-aos="fade-up" data-aos-delay="100" data-aos-duration="800" data-aos-mirror="true">
+                    <!-- Cabeçalho do Trabalho -->
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-xl font-bold text-gray-800">IruyCode Health Meal</h3>
+                            <div class="flex items-center gap-4">
+                                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Em
+                                    Desenvolvimento</span>
+                                <span class="text-gray-500">2024</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carrossel de Imagens -->
+                    <div class="relative h-64 bg-black flex items-center justify-center">
+                        <img src="/imgs/logos/1.png" alt="IruyCode Health Meal"
+                            class="w-full h-full object-contain" />
+                    </div>
+
+                    <!-- Detalhes do Trabalho -->
+                    <div class="p-6">
+                        <div class="space-y-4">
+                            <p class="text-gray-600 text-sm line-clamp-3">
+                                Plataforma de gestão de saúde e treinos, oferecendo planos personalizados de
+                                alimentação e exercícios.
+                                Sistema completo com área do cliente, dashboard administrativo e integração com APIs
+                                de nutrição.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Laravel</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">7 dias
+                                    grátis</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Gestão de
+                                    saúde e treinos</span>
+                            </div>
+                            <div class="flex gap-4 pt-2">
+                                <button type="button"
+                                    class="inline-flex items-center text-green-600 hover:text-green-800 open-healthmeal-modal">
+                                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+                                    </svg>
+                                    Saiba mais
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trabalho 2 -->
+                <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl shadow-xl overflow-hidden"
+                    data-aos="fade-up" data-aos-delay="200" data-aos-duration="800" data-aos-mirror="true">
+                    <!-- Cabeçalho do Trabalho -->
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-xl font-bold text-gray-800">IruyCode Bank Manager</h3>
+                            <div class="flex items-center gap-4">
+                                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Em
+                                    Desenvolvimento</span>
+                                <span class="text-gray-500">2024</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carrossel de Imagens -->
+                    <div class="relative h-64 bg-black  flex items-center justify-center">
+                        <img src="/imgs/logos/2.png" alt="IruyCode Bank Manager"
+                            class="w-full h-full object-contain" />
+                    </div>
+
+                    <!-- Detalhes do Trabalho -->
+                    <div class="p-6">
+                        <div class="space-y-4">
+                            <p class="text-gray-600 text-sm line-clamp-3">
+                                Plataforma de gestão de saúde e treinos, oferecendo planos personalizados de
+                                alimentação e exercícios.
+                                Sistema completo com área do cliente, dashboard administrativo e integração com APIs
+                                de nutrição.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Laravel</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">7 dias
+                                    grátis</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Gestão de
+                                    saúde e treinos</span>
+                            </div>
+                            <div class="flex gap-4 pt-2">
+                                <button type="button"
+                                    class="inline-flex items-center text-blue-600 hover:text-blue-800 open-bankmanager-modal">
+                                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+                                    </svg>
+                                    Saiba mais
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trabalho 3 -->
+                <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl shadow-xl overflow-hidden"
+                    data-aos="fade-up" data-aos-delay="300" data-aos-duration="800" data-aos-mirror="true">
+                    <!-- Cabeçalho do Trabalho -->
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-xl font-bold text-gray-800">IruyCode Pomodoro</h3>
+                            <div class="flex items-center gap-4">
+                                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Em
+                                    Desenvolvimento</span>
+                                <span class="text-gray-500">2024</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carrossel de Imagens -->
+                    <div class="relative h-64 bg-black flex items-center justify-center">
+                        <img src="/imgs/logos/3.png" alt="IruyCode Pomodoro" class="w-full h-full object-contain" />
+                    </div>
+
+                    <!-- Detalhes do Trabalho -->
+                    <div class="p-6">
+                        <div class="space-y-4">
+                            <p class="text-gray-600 text-sm line-clamp-3">
+                                Plataforma de gestão de saúde e treinos, oferecendo planos personalizados de
+                                alimentação e exercícios.
+                                Sistema completo com área do cliente, dashboard administrativo e integração com APIs
+                                de nutrição.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Laravel</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">7 dias
+                                    grátis</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Gestão de
+                                    saúde e treinos</span>
+                            </div>
+                            <div class="flex gap-4 pt-2">
+                                <button type="button"
+                                    class="inline-flex items-center text-red-600 hover:text-red-800 open-pomodoro-modal">
+                                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+                                    </svg>
+                                    Saiba mais
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contact" class="min-h-screen py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Entre em Contato</h2>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Formulário de Contato -->
+                <div class="bg-white rounded-2xl shadow-xl p-8" data-aos="fade-right" data-aos-duration="1000"
+                    data-aos-delay="200" data-aos-mirror="true">
+
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Envie uma Mensagem</h3>
+                    <form class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name"
+                                    class="block text-sm font-medium text-gray-700 mb-2">Nome</label>
+                                <input type="text" id="name" name="name"
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                    placeholder="Seu nome">
+                            </div>
+                            <div>
+                                <label for="email"
+                                    class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                <input type="email" id="email" name="email"
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                    placeholder="seu@email.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Assunto</label>
+                            <input type="text" id="subject" name="subject"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                placeholder="Assunto da mensagem">
+                        </div>
+                        <div>
+                            <label for="message"
+                                class="block text-sm font-medium text-gray-700 mb-2">Mensagem</label>
+                            <textarea id="message" name="message" rows="6"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                placeholder="Sua mensagem..."></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Informações de Contato e Redes Sociais -->
+                <div class="space-y-8" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400"
+                    data-aos-mirror="true">
+                    <!-- Informações de Contato -->
+                    <div class="bg-white rounded-2xl shadow-xl p-8">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6">Informações de Contato</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center text-gray-600">
+                                <svg class="w-6 h-6 mr-3 text-blue-600" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                                <span>yuribanzatodev@gmail.com</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <svg class="w-6 h-6 mr-3 text-blue-600" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                </svg>
+                                <span>(+351) 936-296-609</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <svg class="w-6 h-6 mr-3 text-blue-600" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>Lisboa - Portugal</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Redes Sociais -->
+                    <div class="bg-white rounded-2xl shadow-xl p-8">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6">Redes Sociais</h3>
+                        <div class="grid grid-cols-3 gap-4">
+                            <!-- LinkedIn -->
+                            <a href="https://www.linkedin.com/in/teu-usuario" target="_blank"
+                                class="flex flex-col items-center p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors group">
+                                <svg class="w-8 h-8 text-blue-700 mb-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19 0h-14C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM7 19H4v-9h3v9zm-1.5-10.27a1.73 1.73 0 1 1 0-3.46 1.73 1.73 0 0 1 0 3.46zM20 19h-3v-4.79c0-2.93-3-2.71-3 0V19h-3v-9h3v1.3c1.4-2.58 6-2.78 6 2.48V19z" />
+                                </svg>
+                                <span
+                                    class="text-sm font-medium text-gray-600 group-hover:text-blue-700">LinkedIn</span>
+                            </a>
+
+                            <!-- Instagram -->
+                            <a href="https://www.instagram.com/teu-usuario" target="_blank"
+                                class="flex flex-col items-center p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors group">
+                                <svg class="w-8 h-8 text-pink-600 mb-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.64.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.67 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.35-2.62-4.92-4.92C2.17 15.58 2.16 15.21 2.16 12s.01-3.58.07-4.85c.15-3.23 1.66-4.77 4.92-4.92 1.27-.06 1.64-.07 4.85-.07zm0-2.16C8.74 0 8.33.01 7.05.07 2.7.27.28 2.7.08 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.63 6.78 6.98 6.98 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c4.35-.2 6.78-2.63 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.63-6.78-6.98-6.98C15.67.01 15.26 0 12 0zM12 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zm0 10.17a4 4 0 1 1 0-8.01 4 4 0 0 1 0 8.01zm6.41-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z" />
+                                </svg>
+                                <span
+                                    class="text-sm font-medium text-gray-600 group-hover:text-pink-600">Instagram</span>
+                            </a>
+
+                            <!-- GitHub -->
+                            <a href="https://github.com/teu-usuario" target="_blank"
+                                class="flex flex-col items-center p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors group">
+                                <svg class="w-8 h-8 text-gray-800 mb-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.79-.26.79-.58v-2.23c-3.34.72-4.03-1.42-4.03-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.72.08-.72 1.21.08 1.84 1.24 1.84 1.24 1.07 1.83 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.6-2.66-.31-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.21-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.29 1.23.96-.27 2-.4 3.02-.4s2.06.14 3.02.4c2.29-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.83 1.24 1.9 1.24 3.21 0 4.61-2.81 5.62-5.49 5.93.43.37.82 1.1.82 2.22v3.3c0 .32.2.7.8.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                                </svg>
+                                <span class="text-sm font-medium text-gray-600 group-hover:text-gray-800">GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
 </main>
