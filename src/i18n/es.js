@@ -16,15 +16,17 @@ export default {
     p: 'Especializado en aplicaciones web modernas, interfaces limpias y soluciones escalables.'
   },
 
-    about: {
-    title: "Acerca de Mí",
+  about: {
+    title: "Sobre Mí",
+
     who: {
       title: "Quién Soy",
-      text: `Joven entusiasta de tecnología con foco en desarrollo web.
-            Participo de eventos, formaciones y me gusta estar siempre aprendiendo.
-            Actualmente trabajo en ISPT Group en proyectos web e IoT.
-            Apasionado por transformar ideas en soluciones reales.`
+      text: `Joven entusiasta de la tecnología con enfoque en el desarrollo web.
+Participo en eventos, formaciones y siempre busco aprender más.
+Actualmente trabajo en ISPT Group en proyectos web y de IoT.
+Apasionado por convertir ideas en soluciones reales.`
     },
+
     skills: {
       title: "Habilidades",
       backend: "Desarrollo Web (Back-end)",
@@ -39,85 +41,191 @@ export default {
         js: "JavaScript"
       }
     },
+
     experienceTitle: "Experiencia Profesional",
-    experiences: [
-      {
-        title: "Estágio de Desenvolvedor Full Stack",
-        company: "ISTEC - Instituto Superior de Tecnologias Avançadas Lisboa",
+    experiences: {
+      istec: {
+        title: "Pasantía como Desarrollador Full Stack",
+        company: "ISTEC - Instituto Superior de Tecnologías Avanzadas, Lisboa",
         period: "2020 - 2021",
-        description: `Durante o estágio no ISTEC, ajudei a criar uma loja online com Laravel.
-                      Aprendi a implementar login, registos, gestão de produtos, encomendas e stock.
-                      Foi o meu primeiro contacto real com desenvolvimento web completo.
-                      Ganhei bastante experiência prática no dia a dia com projetos reais.`
+        description: `Durante mi pasantía en ISTEC, ayudé a crear una tienda en línea usando Laravel.
+Aprendí a implementar inicio de sesión, registros, gestión de productos, pedidos y stock.
+Fue mi primer contacto real con el desarrollo web completo.
+Gané mucha experiencia práctica en el día a día con proyectos reales.`
       },
-      {
-        title: "Desarrollador Full Stack y Administración de Sistemas",
-        company: "ISPT Group, Departamento de C&D",
-        period: "2023 - Actualmente",
-        description: `En ISPT Group, desarrollo aplicaciones web, IoT y sistemas internos.
-                      También colaboro en el mantenimiento del servidor del departamento.
-                      El principal objetivo del departamento es crear nuevos productos para apoyar los procesos
-                      y aumentar la eficiencia de la empresa.`
+      ispt: {
+        title: "Desarrollador Full Stack y Administrador de Sistemas",
+        company: "ISPT Group, Departamento de I+D",
+        period: "2023 – Actualidad",
+        description: `En ISPT Group desarrollo aplicaciones web, sistemas IoT y herramientas internas.
+También colaboro en el mantenimiento del servidor del departamento.
+El objetivo principal es crear nuevas soluciones que apoyen los procesos
+y aumenten la eficiencia de la empresa.`
       }
-    ],
+    },
+
     educationTitle: "Educación y Cursos",
-    education: [
-      {
+    education: {
+      tecnico: {
         title: "Técnico en Gestión y Programación de Sistemas Informáticos",
         institution: "Seomara da Costa Primo",
         period: "2017 - 2020",
-        description: `Curso profesional con foco en programación (C++/JS), servidores y hardware.
-                      Proyecto final desarrollado en Laravel y disponible en GitHub.`
+        description: `Curso profesional centrado en programación (C++/JS), servidores y hardware.
+Proyecto final desarrollado con Laravel y disponible en GitHub.`
       },
-      {
+      php: {
         title: "Curso Avanzado de PHP",
         institution: "Anpri",
         period: "2020",
-        description: `Aprofundamento em Laravel, incluindo testes, cache e otimização.
-                      Desenvolvimento de aplicações escaláveis.`
+        description: `Profundización en Laravel, incluyendo pruebas, caché y optimización.
+Desarrollo de aplicaciones escalables.`
       },
-      {
+      bytes4future: {
         title: "Bytes4Future",
         institution: "Run Code School",
         period: "2022",
-        description: `Programa de desenvolvimento com foco em JavaScript, bibliotecas e banco de dados.
-                      Atividades diárias em plataforma para reforço de aprendizado.`
+        description: `Programa de desarrollo centrado en JavaScript, bibliotecas y bases de datos.
+Actividades diarias en plataforma para reforzar el aprendizaje.`
       },
-      {
-        title: "Ctesp – Desenvolvimento de Software",
+      ctesp: {
+        title: "Ctesp – Desarrollo de Software",
         institution: "Lisboa",
-        period: "2024 – Atualmente",
-        description: `Atualmente estou a frequentar um curso técnico de desenvolvimento de software
-                      para fortalecer a minha base na área.
-                      O objetivo é evoluir como programador e, no futuro, seguir para a licenciatura
-                      em Engenharia Informática.`
+        period: "2024 – Actualidad",
+        description: `Actualmente estoy cursando una formación técnica en desarrollo de software
+para reforzar mis fundamentos en el área.
+Mi objetivo es crecer como desarrollador y, en el futuro, seguir con una licenciatura
+en Ingeniería Informática.`
       }
-    ],
+    },
+
     eventsTitle: "Eventos",
-    events: [
-      {
+    events: {
+      appsforgood: {
         title: "Apps for Good",
         location: "Lisboa",
         year: "2018",
-        description: `Participei na 4.ª edição do Apps for Good com a aplicação Saving, a primeira versão
-                      de uma app pensada para ajudar os utilizadores a poupar dinheiro com base nos seus hábitos de consumo.`
+        description: `Participé en la 4.ª edición de Apps for Good con la aplicación Saving, la primera versión
+de una app pensada para ayudar a los usuarios a ahorrar dinero según sus hábitos de consumo.`
       },
-      {
+      robotparty: {
         title: "Robot Party",
-        location: "Porto",
+        location: "Oporto",
         year: "2019",
-        description: `Estive presente na 9.ª edição da Robot Party, um evento onde várias escolas se juntaram
-                      para criar robôs com Arduino e competir em diferentes provas e circuitos.`
+        description: `Asistí a la 9.ª edición de Robot Party, un evento donde varias escuelas se reunieron
+para construir robots con Arduino y competir en diferentes desafíos y circuitos.`
       },
-      {
+      websummit: {
         title: "Web Summit",
         location: "Lisboa",
         year: "2024",
-        description: `Participei na edição de 2024 do Web Summit representando a ISPT Group.
-                      Foi uma experiência incrível onde tive contacto com várias startups e empresas tecnológicas.`
+        description: `Participé en la edición de 2024 del Web Summit representando a ISPT Group.
+Fue una experiencia increíble donde tuve contacto con muchas startups y empresas tecnológicas.`
       }
-    ]
+    }
   },
+
+
+  projects: {
+    title: "Trabajos Realizados",
+
+    status: {
+      finished: "Completado",
+      inProgress: "En progreso"
+    },
+
+    jedicon: {
+      title: "JediconPT",
+      year: "2025",
+      description: `Participé en la organización de la primera Jedicon en Portugal, un evento dedicado al universo de Star Wars.
+Fui responsable del desarrollo del sitio web, el sistema de boletos, áreas interactivas como el cuestionario y el sorteo,
+además de crear un panel completo para que los organizadores gestionaran el evento.`,
+      visit: "Visitar Sitio"
+    },
+
+    upcoming: {
+      title: "Próximos Trabajos",
+      description: "Próximamente se agregarán nuevos trabajos aquí. ¡Mantente atento para ver más proyectos!",
+      tag1: "Próximamente",
+      tag2: "Nuevos proyectos"
+    }
+  },
+
+
+  works: {
+    title: "Proyectos",
+
+    status: {
+      inProgress: "En Desarrollo"
+    },
+
+    buttons: {
+      learnMore: "Saber más"
+    },
+
+    healthmeal: {
+      title: "IruyCode Health Meal",
+      year: "2024",
+      description: `Plataforma de gestión de salud y entrenamientos,
+que ofrece planes personalizados de alimentación y ejercicio.
+Sistema completo con área de cliente, panel de administración
+e integración con APIs de nutrición.`,
+      tags: ["Laravel", "7 días gratis", "Gestión de salud y entrenamientos"]
+    },
+
+    bankmanager: {
+      title: "IruyCode Bank Manager",
+      year: "2024",
+      description: `Sistema de gestión financiera personal enfocado en el control de deudas,
+transacciones recurrentes y reportes inteligentes. Herramienta ideal para organizar
+finanzas de forma práctica y eficiente.`,
+      tags: ["Laravel", "Control de deudas", "Gestión financiera"]
+    },
+
+    pomodoro: {
+      title: "IruyCode Pomodoro",
+      year: "2024",
+      description: `Aplicación de gestión del tiempo con la técnica Pomodoro.
+Permite crear tareas, seguir ciclos, integrarse con Spotify
+y personalizar notificaciones para un enfoque máximo.`,
+      tags: ["Laravel", "Temporizador Pomodoro", "Enfoque y productividad"]
+    }
+  },
+
+
+  contact: {
+    title: "Contacto",
+
+    form: {
+      title: "Enviar un Mensaje",
+      nameLabel: "Nombre",
+      namePlaceholder: "Tu nombre",
+      emailLabel: "Correo electrónico",
+      emailPlaceholder: "tu@email.com",
+      subjectLabel: "Asunto",
+      subjectPlaceholder: "Asunto del mensaje",
+      messageLabel: "Mensaje",
+      messagePlaceholder: "Tu mensaje...",
+      sendButton: "Enviar Mensaje"
+    },
+
+    info: {
+      title: "Información de Contacto",
+      email: "yuribanzatodev@gmail.com",
+      phone: "(+351) 936-296-609",
+      location: "Lisboa - Portugal"
+    },
+
+    socials: {
+      title: "Redes Sociales",
+      linkedin: "LinkedIn",
+      instagram: "Instagram",
+      github: "GitHub"
+    }
+  },
+
+
+
+
 
   footer: {
     about: "Sobre",
