@@ -3,6 +3,11 @@
 /* @import 'aos/dist/aos.css'; */
 
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 
 @keyframes auroraGradient {
 0% {

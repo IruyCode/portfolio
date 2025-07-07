@@ -11,10 +11,19 @@ export default {
     },
 
     home: {
-        title: 'I am <span class="text-cyan-400 animate-pulse">Yuri Banzato</span>, Software Developer.',
-        p: 'Specialized in modern web applications, clean interfaces and scalable solutions.'
+        typing: {
+            h1: [
+                'I am <span class="text-cyan-400 animate-pulse">Yuri Banzato</span>,',
+                'Software Developer.'
+            ],
+            p: [
+                'Specialized in modern web applications,',
+                'clean interfaces and scalable solutions.'
+            ]
+        }
     },
 
+    
     about: {
         title: "About Me",
 
@@ -81,7 +90,7 @@ Development of scalable applications.`
             bytes4future: {
                 title: "Bytes4Future",
                 institution: "Run Code School",
-                period: "2022",
+                period: "2021-2022",
                 description: `Development program focused on JavaScript, libraries, and databases.
 Daily platform-based activities to reinforce learning.`
             },
@@ -122,7 +131,7 @@ It was an amazing experience where I engaged with many startups and tech compani
     },
 
     projects: {
-        title: "Completed Works",
+        title: "Works",
 
         status: {
             finished: "Completed",

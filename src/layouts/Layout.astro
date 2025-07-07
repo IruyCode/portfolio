@@ -32,6 +32,7 @@ if (typeof window !== "undefined") {
     <title>IruyCode</title>
 </head>
 
+
 <body>
     <Header lang={lang} t={t} />
     <slot />
@@ -44,19 +45,300 @@ if (typeof window !== "undefined") {
 
 
 
+<!-- Script para o carrossel de imagens dos projetos -->
+<script>
+    document.querySelectorAll('.slides-container').forEach(container => {
+        const slides = container.querySelectorAll('.slide');
+        const prevButton = container.parentElement.querySelector('button:first-of-type');
+        const nextButton = container.parentElement.querySelector('button:last-of-type');
+        let currentSlide = 0;
+        let interval;
+        let startX = null;
 
-<!-- <script is:inline>
+        // Mostrar o primeiro slide
+        slides[0].classList.remove('opacity-0');
+
+        // Função para mostrar um slide específico
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.add('opacity-0'));
+            slides[index].classList.remove('opacity-0');
+        }
+
+        // Função para iniciar o auto-play
+        function startAutoPlay() {
+            interval = setInterval(() => {
+                // No mobile, sempre roda. No desktop, só se hover
+                if (window.innerWidth < 768 || container.parentElement.parentElement.matches(
+                        ':hover')) {
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    showSlide(currentSlide);
+                }
+            }, 4000); // 4 segundos
+        }
+
+        // Event listeners para os botões
+        prevButton.addEventListener('click', () => {
+            clearInterval(interval);
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+            startAutoPlay();
+        });
+
+        nextButton.addEventListener('click', () => {
+            clearInterval(interval);
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+            startAutoPlay();
+        });
+
+        // Suporte a swipe/touch para mobile
+        container.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+        container.addEventListener('touchend', (e) => {
+            if (startX === null) return;
+            let endX = e.changedTouches[0].clientX;
+            let diff = endX - startX;
+            if (Math.abs(diff) > 40) { // threshold
+                clearInterval(interval);
+                if (diff > 0) {
+                    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                } else {
+                    currentSlide = (currentSlide + 1) % slides.length;
+                }
+                showSlide(currentSlide);
+                startAutoPlay();
+            }
+            startX = null;
+        });
+
+        // Iniciar o auto-play
+        startAutoPlay();
+
+        // Pausar o auto-play quando o mouse sai do container (apenas desktop)
+        container.parentElement.parentElement.addEventListener('mouseleave', () => {
+            if (window.innerWidth >= 768) clearInterval(interval);
+        });
+
+        // Retomar o auto-play quando o mouse entra no container (apenas desktop)
+        container.parentElement.parentElement.addEventListener('mouseenter', () => {
+            if (window.innerWidth >= 768) {
+                interval = setInterval(() => {
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    showSlide(currentSlide);
+                }, 4000);
+            }
+        });
+    });
+
+    // Script para o carrossel de imagens dos trabalhos
+    document.querySelectorAll('.work-carousel').forEach(container => {
+        const slides = container.querySelectorAll('.work-slide');
+        const dots = container.parentElement.querySelectorAll('.work-dots button');
+        const prevButton = container.parentElement.querySelector('.work-prev');
+        const nextButton = container.parentElement.querySelector('.work-next');
+        let currentSlide = 0;
+        let interval;
+
+        // Mostrar o primeiro slide e dot
+        slides[0].classList.remove('opacity-0');
+        dots[0].classList.add('bg-white');
+
+        // Função para mostrar um slide específico
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.add('opacity-0'));
+            dots.forEach(dot => dot.classList.remove('bg-white'));
+            slides[index].classList.remove('opacity-0');
+            dots[index].classList.add('bg-white');
+        }
+
+        // Função para iniciar o auto-play
+        function startAutoPlay() {
+            interval = setInterval(() => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }, 5000); // Muda a cada 5 segundos
+        }
+
+        // Event listeners para os botões
+        prevButton.addEventListener('click', () => {
+            clearInterval(interval);
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+            startAutoPlay();
+        });
+
+        nextButton.addEventListener('click', () => {
+            clearInterval(interval);
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+            startAutoPlay();
+        });
+
+        // Event listeners para os dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                clearInterval(interval);
+                currentSlide = index;
+                showSlide(currentSlide);
+                startAutoPlay();
+            });
+        });
+
+        // Iniciar o auto-play
+        startAutoPlay();
+
+        // Pausar o auto-play quando o mouse está sobre o carrossel
+        container.parentElement.addEventListener('mouseenter', () => {
+            clearInterval(interval);
+        });
+
+        // Retomar o auto-play quando o mouse sai do carrossel
+        container.parentElement.addEventListener('mouseleave', () => {
+            startAutoPlay();
+        });
+    });
+
+    // Adicionar JS para o carrossel mobile toggle
+    document.querySelectorAll('.show-carousel-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const card = btn.closest('.group');
+            const overlay = card.querySelector('.carousel-overlay');
+            overlay.classList.add('opacity-100', 'pointer-events-auto');
+            overlay.classList.remove('opacity-0', 'pointer-events-none');
+        });
+    });
+    document.querySelectorAll('.close-carousel-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const card = btn.closest('.group');
+            const overlay = card.querySelector('.carousel-overlay');
+            overlay.classList.remove('opacity-100', 'pointer-events-auto');
+            overlay.classList.add('opacity-0', 'pointer-events-none');
+        });
+    });
+</script>
+
+<!-- Script para os modais - Health Meal , Bank Manager e Pomodoro -->
+<script>
+    // Modal Health Meal
+    document.querySelectorAll('.open-healthmeal-modal').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const modal = document.getElementById('healthmeal-modal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100');
+        });
+    });
+    document.querySelectorAll('.close-healthmeal-modal').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const modal = document.getElementById('healthmeal-modal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modal.classList.remove('opacity-100');
+        });
+    });
+
+    // Modal Bank Manager
+    document.querySelectorAll('.open-bankmanager-modal').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const modal = document.getElementById('bankmanager-modal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100');
+        });
+    });
+    document.querySelectorAll('.close-bankmanager-modal').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const modal = document.getElementById('bankmanager-modal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modal.classList.remove('opacity-100');
+        });
+    });
+
+    // Modal Pomodoro
+    document.querySelectorAll('.open-pomodoro-modal').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const modal = document.getElementById('pomodoro-modal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100');
+        });
+    });
+    document.querySelectorAll('.close-pomodoro-modal').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const modal = document.getElementById('pomodoro-modal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modal.classList.remove('opacity-100');
+        });
+    });
+
+    // Fechar modais ao clicar fora do conteúdo
+    document.querySelectorAll('[id$="-modal"]').forEach(modal => {
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.add('opacity-0', 'pointer-events-none');
+                this.classList.remove('opacity-100');
+            }
+        });
+    });
+</script>
+
+
+<!-- Script para as traduções - Hero -->
+<script is:inline>
+    // Pega as traduções com base no idioma atual da URL
+    const getLangFromPath = () => {
+        const path = window.location.pathname;
+        if (path.startsWith("/en")) return "en";
+        if (path.startsWith("/es")) return "es";
+        return "pt";
+    };
+
+    const lang = getLangFromPath();
+
+    // Traduções inline (ou pode importar via sistema build, se desejar)
+    const translations = {
+        pt: {
+            h1: [
+                'Sou o <span class="text-cyan-400 animate-pulse">Yuri Banzato</span>,',
+                'Desenvolvedor de Software.'
+            ],
+            p: [
+                'Especializado em aplicações web modernas,',
+                'interfaces limpas e soluções escaláveis.'
+            ]
+        },
+        en: {
+            h1: [
+                'I am <span class="text-cyan-400 animate-pulse">Yuri Banzato</span>,',
+                'Software Developer.'
+            ],
+            p: [
+                'Specialized in modern web applications,',
+                'clean interfaces and scalable solutions.'
+            ]
+        },
+        es: {
+            h1: [
+                'Soy <span class="text-cyan-400 animate-pulse">Yuri Banzato</span>,',
+                'Desarrollador de Software.'
+            ],
+            p: [
+                'Especializado en aplicaciones web modernas,',
+                'interfaces limpias y soluciones escalables.'
+            ]
+        }
+    };
+
+    const h1Lines = translations[lang].h1;
+    const pLines = translations[lang].p;
+
     const h1Target = document.getElementById("typing-h1");
     const pTarget = document.getElementById("typing-p");
-
-    const h1Lines = [
-        'Sou o <span class="text-cyan-400 animate-pulse">Yuri Banzato</span>,',
-        'Desenvolvedor de Software.'
-    ];
-    const pLines = [
-        'Especializado em aplicações web modernas,',
-        'interfaces limpas e soluções escaláveis.'
-    ];
 
     let lineIndex = 0;
     let charIndex = 0;
@@ -81,7 +363,6 @@ if (typeof window !== "undefined") {
                 setTimeout(typeLine, 300);
             }
         } else if (currentTarget === h1Target) {
-            // Passa para o parágrafo
             currentTarget = pTarget;
             lineArray = pLines;
             lineIndex = 0;
@@ -91,13 +372,9 @@ if (typeof window !== "undefined") {
     }
 
     typeLine();
-</script> -->
+</script>
 
-
-
-
-
-
+<!-- Flip Card - Hero -->
 <script is:inline>
     const flipCard = document.getElementById("flip-card");
     const flipInner = document.getElementById("flip-inner");
@@ -107,6 +384,7 @@ if (typeof window !== "undefined") {
     });
 </script>
 
+<!-- Idiomas -->
 <script>
     const langToggle = document.getElementById("langToggle");
     const langMenu = document.getElementById("langMenu");
