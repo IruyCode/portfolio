@@ -18,7 +18,7 @@ export default {
       ],
       p: [
         'Especializado en aplicaciones web modernas,',
-        'interfaces limpias y soluciones escalables.'
+        '"Creo que las grandes ideas merecen cobrar vida — y yo las programo."'
       ]
     }
   },
@@ -28,10 +28,9 @@ export default {
 
     who: {
       title: "Quién Soy",
-      text: `Joven entusiasta de la tecnología con enfoque en el desarrollo web.
-Participo en eventos, formaciones y siempre busco aprender más.
-Actualmente trabajo en ISPT Group en proyectos web y de IoT.
-Apasionado por convertir ideas en soluciones reales.`
+      text: `Joven entusiasta de la tecnología con enfoque en el desarrollo web. Participo en eventos y formaciones, siempre con el objetivo de aprender y mejorar. 
+            Actualmente estoy profundizando mis conocimientos a través de un curso de especialización en desarrollo web y nuevas tecnologías. 
+            Apasionado por transformar ideas en soluciones reales y funcionales.`
     },
 
     skills: {
@@ -63,11 +62,10 @@ Gané mucha experiencia práctica en el día a día con proyectos reales.`
       ispt: {
         title: "Desarrollador Full Stack y Administrador de Sistemas",
         company: "ISPT Group, Departamento de I+D",
-        period: "2023 – Actualidad",
-        description: `En ISPT Group desarrollo aplicaciones web, sistemas IoT y herramientas internas.
-También colaboro en el mantenimiento del servidor del departamento.
-El objetivo principal es crear nuevas soluciones que apoyen los procesos
-y aumenten la eficiencia de la empresa.`
+        period: "2023 – 2025",
+        description: `En ISPT Group, participé en el desarrollo de aplicaciones web, proyectos IoT y sistemas internos. 
+                      También colaboré en el mantenimiento del servidor del departamento. 
+                      El principal objetivo del área era crear productos innovadores para optimizar los procesos y aumentar la eficiencia de la empresa.`
       }
     },
 
@@ -78,7 +76,7 @@ y aumenten la eficiencia de la empresa.`
         institution: "Seomara da Costa Primo",
         period: "2017 - 2020",
         description: `Curso profesional centrado en programación (C++/JS), servidores y hardware.
-Proyecto final desarrollado con Laravel y disponible en GitHub.`
+                      Proyecto final desarrollado con Laravel y disponible en GitHub.`
       },
       php: {
         title: "Curso Avanzado de PHP",
@@ -253,7 +251,8 @@ y personalizar notificaciones para un enfoque máximo.`,
       works: "Trabajos",
       contact: "Contacto"
     },
-    servicesList: ["Desarrollo Web", "Aplicaciones Móviles", "Diseño UI/UX", "Consultoría"]
+    servicesList: ["Aplicaciones Web", "IoT", "Paneles de Control", "Eventos", "Portafolios", "UX/UI"]
+
   }
 
 };

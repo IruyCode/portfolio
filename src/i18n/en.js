@@ -18,7 +18,7 @@ export default {
             ],
             p: [
                 'Specialized in modern web applications,',
-                'clean interfaces and scalable solutions.'
+                '"I believe great ideas deserve to come to life — and I code them."'
             ]
         }
     },
@@ -29,10 +29,9 @@ export default {
 
         who: {
             title: "Who I Am",
-            text: `Young technology enthusiast focused on web development.
-I participate in events, training programs, and I’m always eager to learn.
-Currently working at ISPT Group on web and IoT projects.
-Passionate about turning ideas into real solutions.`
+            text: `Young technology enthusiast focused on web development. I actively participate in events and training programs, 
+                    always seeking to learn and grow. I am currently deepening my knowledge through a specialization course in web development and new technologies. 
+                    Passionate about turning ideas into real and functional solutions.`
         },
 
         skills: {
@@ -57,17 +56,17 @@ Passionate about turning ideas into real solutions.`
                 company: "ISTEC - Advanced Institute of Technologies, Lisbon",
                 period: "2020 - 2021",
                 description: `During my internship at ISTEC, I helped build an online store using Laravel.
-I learned to implement login, registration, product management, orders, and stock.
-It was my first real experience with full web development.
-I gained solid hands-on experience working on real-world projects.`
+                                I learned to implement login, registration, product management, orders, and stock.
+                                It was my first real experience with full web development.
+                                I gained solid hands-on experience working on real-world projects.`
             },
             ispt: {
                 title: "Full Stack Developer and Systems Administrator",
                 company: "ISPT Group, R&D Department",
-                period: "2023 – Present",
-                description: `At ISPT Group, I develop web applications, IoT systems, and internal tools.
-I also assist with server maintenance within the department.
-The main goal is to create new tools to support processes and boost the company’s efficiency.`
+                period: "2023 – 2025",
+                description: `At ISPT Group, I worked on developing web applications, IoT projects, and internal systems. 
+                            I also collaborated in maintaining the department’s server. 
+                            The main goal of the department was to create innovative products to optimize processes and increase the company’s efficiency.`
             }
         },
 
@@ -249,7 +248,7 @@ and customizable notifications for maximum focus.`,
             works: "Works",
             contact: "Contact"
         },
-        servicesList: ["Web Development", "Mobile Applications", "UI/UX Design", "Consulting"]
+        servicesList: ["Web Apps", "IoT", "Dashboards", "Events", "Portfolios", "UX/UI"]
     }
 
 };

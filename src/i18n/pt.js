@@ -10,7 +10,7 @@ export default {
     contacts: "Contatos"
   },
 
-  
+
   home: {
     typing: {
       h1: [
@@ -19,7 +19,7 @@ export default {
       ],
       p: [
         'Especializado em aplicações web modernas,',
-        'interfaces limpas e soluções escaláveis.'
+        '"Acredito que boas ideias merecem ganhar vida — e eu as programo."'
       ]
     }
   },
@@ -31,10 +31,10 @@ export default {
 
     who: {
       title: "Quem Sou",
-      text: `Jovem entusiasta de tecnologia com foco em desenvolvimento web.
-Participo de eventos, formações e gosto de estar sempre a aprender.
-Atualmente trabalho na ISPT Group em projetos web e IoTs.
-Apaixonado por transformar ideias em soluções reais.`
+      text: `Jovem entusiasta de tecnologia com foco em desenvolvimento web. 
+            Participo de eventos e formações, sempre em busca de aprender e evoluir. 
+            Atualmente estou a aprofundar os meus conhecimentos através de um curso de especialização em desenvolvimento web e novas tecnologias. 
+            Apaixonado por transformar ideias em soluções reais e funcionais.`
     },
 
     skills: {
@@ -66,11 +66,10 @@ Ganhei bastante experiência prática no dia a dia com projetos reais.`
       ispt: {
         title: "Desenvolvedor Full Stack e Administração de Sistemas",
         company: "ISPT Group, Departamento de C&D",
-        period: "2023 - Atualmente",
-        description: `Na ISPT Group, desenvolvo aplicações web, IoT e sistemas internos.
-Também colaboro na manutenção do servidor do departamento.
-O principal objetivo do departamento é criar novos produtos para apoiar os processos
-e aumentar a eficiência da empresa.`
+        period: "2023 - 2025",
+        description: `Na ISPT Group, atuei no desenvolvimento de aplicações web, 
+                      projetos IoT e sistemas internos. Também colaborei na manutenção do servidor do departamento. 
+                      O principal objetivo do setor era criar produtos inovadores para otimizar processos e aumentar a eficiência da empresa.`
       }
     },
 
@@ -253,7 +252,7 @@ Permite criar tarefas, acompanhar ciclos, integrar com Spotify e personalizar no
       works: "Trabalhos",
       contact: "Contato"
     },
-    servicesList: ["Desenvolvimento Web", "Aplicações Mobile", "UI/UX Design", "Consultoria"]
+    servicesList: ["Web Apps", "IoT", "Dashboards", "Eventos", "Portfólios", "UX/UI"]
   }
 
 };
