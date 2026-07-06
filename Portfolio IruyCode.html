@@ -3,16 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Yuri Banzato (IruyCode) — Desenvolvedor de software full-stack em Lisboa. Aplicações web modernas de ponta a ponta: Laravel, React, Node e mais." />
     <title>IruyCode · Yuri Banzato — Desenvolvedor de Software</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-motion="on">
     <div class="bg-field"></div>
@@ -39,6 +37,10 @@
         <a class="dock-item" data-target="works" href="#works" aria-label="Trabalhos">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="7" width="18" height="13" rx="2"/><path stroke-linecap="round" d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
           <span class="tip">Trabalhos</span>
+        </a>
+        <a class="dock-item" data-target="projects" href="#projects" aria-label="Projetos">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m9 9-3 3 3 3m6-6 3 3-3 3M13 5l-2 14"/></svg>
+          <span class="tip">Projetos</span>
         </a>
         <a class="dock-item" data-target="contact" href="#contact" aria-label="Contacto">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="5" width="18" height="14" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="m4 7 8 6 8-6"/></svg>
@@ -68,15 +70,15 @@
               <h1 class="reveal" data-d="1">
                 Yuri <span class="accent">Banzato</span>
               </h1>
-              <div class="role reveal" data-d="2"><span id="role"></span><span class="caret" aria-hidden="true">▋</span></div>
+              <div class="role reveal" data-d="2"><span id="role"></span></div>
               <p class="lede reveal" data-d="3">
                 Construo aplicações web modernas de ponta a ponta — do schema da
                 base de dados à interface. Acredito que boas ideias merecem
                 ganhar vida, e eu programo-as.
               </p>
               <div class="hero-cta reveal" data-d="4">
-                <a class="btn btn-primary" href="#works">
-                  Ver trabalhos
+                <a class="btn btn-primary" href="#projects">
+                  Ver projetos
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
                 </a>
                 <a class="btn btn-ghost" href="#contact">
@@ -98,7 +100,7 @@
                   <span class="fn">yuri.dev — ~/portfolio</span>
                 </div>
                 <div class="portrait">
-                  <img src="/imgs/formal01.jpg" alt="Yuri Banzato" />
+                  <img src="assets/photo.jpg" alt="Yuri Banzato" />
                   <div class="term-code">
                     <div class="ln"><span class="k">const</span> dev = {</div>
                     <div class="ln">&nbsp;&nbsp;name: <span class="s">"Yuri Banzato"</span>,</div>
@@ -145,7 +147,7 @@
                 Atualmente aprofundo os meus conhecimentos num curso de especialização em
                 desenvolvimento de software, com o objetivo de seguir para Engenharia Informática.
               </p>
-              <div class="chip-row">
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px;">
                 <span class="chip"><span class="dot" style="background:var(--accent)"></span> Lisboa, Portugal</span>
                 <span class="chip">🎓 CTeSP em Desenvolvimento de Software</span>
                 <span class="chip">PT · EN · ES</span>
@@ -178,8 +180,8 @@
 
           <!-- extra competence chips -->
           <div class="reveal" data-d="2" style="margin-top:28px;">
-            <span class="lbl block-lbl">// também trabalho com</span>
-            <div class="tag-cloud">
+            <span class="lbl" style="font-family:var(--font-mono);font-size:13px;color:var(--text-faint);display:block;margin-bottom:14px;">// também trabalho com</span>
+            <div style="display:flex;flex-wrap:wrap;gap:10px;">
               <span class="tag">MongoDB</span>
               <span class="tag">APIs REST · OAuth2</span>
               <span class="tag">IoT · sistemas conectados</span>
@@ -319,16 +321,15 @@
 
           <div class="card hover work-feature reveal">
             <div class="work-gallery" data-gallery>
-              <div class="slide logo-slide active"><img src="/imgs/jobs/jedicon/logo/logo_jedicon.png" alt="JediconPT" /></div>
-              <div class="slide"><img src="/imgs/jobs/jedicon/Imgs/Picture1.png" alt="Jedicon 1" /></div>
-              <div class="slide"><img src="/imgs/jobs/jedicon/Imgs/Picture2.png" alt="Jedicon 2" /></div>
-              <div class="slide"><img src="/imgs/jobs/jedicon/Imgs/Picture3.png" alt="Jedicon 3" /></div>
-              <div class="slide"><img src="/imgs/jobs/jedicon/Imgs/Picture4.png" alt="Jedicon 4" /></div>
-              <div class="slide"><img src="/imgs/jobs/jedicon/Imgs/Picture5.png" alt="Jedicon 5" /></div>
-              <div class="slide"><img src="/imgs/jobs/jedicon/Imgs/Picture6.png" alt="Jedicon 6" /></div>
+              <div class="slide logo-slide active"><img src="assets/jedicon-logo.png" alt="JediconPT" /></div>
+              <div class="slide"><img src="assets/jedicon-1.png" alt="Jedicon 1" /></div>
+              <div class="slide"><img src="assets/jedicon-2.png" alt="Jedicon 2" /></div>
+              <div class="slide"><img src="assets/jedicon-3.png" alt="Jedicon 3" /></div>
               <button class="gal-arrow prev" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m15 19-7-7 7-7"/></svg></button>
               <button class="gal-arrow next" aria-label="Seguinte"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m9 5 7 7-7 7"/></svg></button>
-              <div class="gal-nav"></div>
+              <div class="gal-nav">
+                <button class="gal-dot active"></button><button class="gal-dot"></button><button class="gal-dot"></button><button class="gal-dot"></button>
+              </div>
             </div>
             <div class="work-body">
               <div class="meta">
@@ -345,7 +346,7 @@
               <div class="work-tags">
                 <span class="tag">Site institucional</span>
                 <span class="tag">Sistema de bilhetes</span>
-                <span class="tag">Quiz &amp; sorteio</span>
+                <span class="tag">Quiz & sorteio</span>
                 <span class="tag">Dashboard admin</span>
               </div>
               <a class="btn btn-primary" href="https://jedicon.pt" target="_blank" rel="noopener" style="align-self:flex-start;">
@@ -354,14 +355,58 @@
               </a>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div class="work-soon reveal" data-d="1">
-            <div class="soon-ico">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12M6 12h12"/></svg>
+      <!-- ============ PROJECTS ============ -->
+      <section id="projects" class="section-pad">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <span class="kicker">// projetos_pessoais</span>
+            <h2 class="sec-title">Projetos em desenvolvimento</h2>
+            <p class="sec-sub">Produtos próprios que estou a construir — do conceito ao deploy.</p>
+          </div>
+
+          <div class="proj-grid">
+            <div class="card hover proj-card reveal" data-modal-open="modal-health">
+              <div class="proj-logo"><span class="proj-num">01</span><img src="assets/proj-healthmeal.png" alt="Health Meal" /></div>
+              <div class="proj-info">
+                <div style="display:flex;align-items:center;gap:10px;">
+                  <h4>IruyCode Health Meal</h4>
+                </div>
+                <span class="chip" style="align-self:flex-start;"><span class="dot warn"></span> Em desenvolvimento · 2024</span>
+                <p>Plataforma de gestão de saúde e treinos com planos personalizados de alimentação e exercícios, área do cliente e dashboard administrativo.</p>
+                <div class="proj-foot">
+                  <span class="proj-more">Saber mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+                  <span class="tag">Laravel</span>
+                </div>
+              </div>
             </div>
-            <div>
-              <h4>Novos trabalhos a caminho</h4>
-              <p>Estou sempre a construir. Em breve mais projetos entregues aparecem por aqui.</p>
+
+            <div class="card hover proj-card reveal" data-d="1" data-modal-open="modal-bank">
+              <div class="proj-logo"><span class="proj-num">02</span><img src="assets/proj-bank.png" alt="Bank Manager" /></div>
+              <div class="proj-info">
+                <h4>IruyCode Bank Manager</h4>
+                <span class="chip" style="align-self:flex-start;"><span class="dot warn"></span> Em desenvolvimento · 2024</span>
+                <p>Sistema de gestão financeira pessoal com controlo de dívidas, transações recorrentes e relatórios inteligentes para organizar finanças de forma prática.</p>
+                <div class="proj-foot">
+                  <span class="proj-more">Saber mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+                  <span class="tag">Laravel</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card hover proj-card reveal" data-d="2" data-modal-open="modal-pomo">
+              <div class="proj-logo"><span class="proj-num">03</span><img src="assets/proj-pomodoro.png" alt="Pomodoro" /></div>
+              <div class="proj-info">
+                <h4>IruyCode Pomodoro</h4>
+                <span class="chip" style="align-self:flex-start;"><span class="dot warn"></span> Em desenvolvimento · 2024</span>
+                <p>App de gestão de tempo com a técnica Pomodoro: tarefas, ciclos, integração com Spotify e notificações personalizáveis para foco máximo.</p>
+                <div class="proj-foot">
+                  <span class="proj-more">Saber mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+                  <span class="tag">Laravel</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -394,14 +439,14 @@
             <div class="reveal" data-d="1">
               <div class="card info-card">
                 <h3>Informações</h3>
-                <a class="info-row" href="mailto:yuribanzatodev@gmail.com">
+                <div class="info-row">
                   <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="m4 7 8 6 8-6"/></svg></span>
-                  yuribanzatodev@gmail.com
-                </a>
-                <a class="info-row" href="tel:+351936296609">
+                  <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="235a56514a41424d5942574c47465563444e424a4f0d404c4e">[email&#160;protected]</a>
+                </div>
+                <div class="info-row">
                   <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 0 1 2-2h3l2 5-2.5 1.5a11 11 0 0 0 5 5L19 14l5 2v3a2 2 0 0 1-2 2A18 18 0 0 1 3 5z"/></svg></span>
                   (+351) 936 296 609
-                </a>
+                </div>
                 <div class="info-row">
                   <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
                   Lisboa, Portugal
@@ -445,6 +490,7 @@
                 <li><a href="#about">Sobre</a></li>
                 <li><a href="#timeline">Percurso</a></li>
                 <li><a href="#works">Trabalhos</a></li>
+                <li><a href="#projects">Projetos</a></li>
                 <li><a href="#contact">Contacto</a></li>
               </ul>
             </div>
@@ -467,6 +513,86 @@
       </footer>
     </div>
 
-    <script src="/app.js" defer></script>
+    <!-- ============ MODALS ============ -->
+    <div class="modal" id="modal-health">
+      <div class="modal-bg"></div>
+      <div class="modal-card">
+        <button class="modal-close" data-modal-close aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="m6 6 12 12M18 6 6 18"/></svg></button>
+        <div class="modal-logo"><img src="assets/proj-healthmeal.png" alt="Health Meal" /></div>
+        <span class="chip" style="margin-bottom:14px;"><span class="dot warn"></span> Em desenvolvimento</span>
+        <h3>IruyCode Health Meal</h3>
+        <p class="desc">Plataforma completa de gestão de saúde e treinos, desenhada para ajudar pessoas a alcançar os seus objetivos de fitness com acompanhamento profissional.</p>
+        <ul class="feature-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></svg> Planos personalizados de alimentação</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></svg> Rotinas de treino adaptadas</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></svg> Acompanhamento de progresso</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></svg> Dashboard administrativo completo</li>
+        </ul>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;"><span class="tag">Laravel</span><span class="tag">MySQL</span><span class="tag">API nutrição</span></div>
+      </div>
+    </div>
+
+    <div class="modal" id="modal-bank">
+      <div class="modal-bg"></div>
+      <div class="modal-card">
+        <button class="modal-close" data-modal-close aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="m6 6 12 12M18 6 6 18"/></svg></button>
+        <div class="modal-logo"><img src="assets/proj-bank.png" alt="Bank Manager" /></div>
+        <span class="chip" style="margin-bottom:14px;"><span class="dot warn"></span> Em desenvolvimento</span>
+        <h3>IruyCode Bank Manager</h3>
+        <p class="desc">Sistema completo de gestão financeira pessoal e empresarial. Controla finanças, acompanha investimentos e gere transações numa interface intuitiva e segura.</p>
+        <ul class="feature-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></svg> Gestão de contas e transações</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></svg> Controlo de dívidas e recorrências</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></svg> Relatórios financeiros detalhados</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></svg> Planeamento financeiro inteligente</li>
+        </ul>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;"><span class="tag">Laravel</span><span class="tag">MySQL</span><span class="tag">Relatórios</span></div>
+      </div>
+    </div>
+
+    <div class="modal" id="modal-pomo">
+      <div class="modal-bg"></div>
+      <div class="modal-card">
+        <button class="modal-close" data-modal-close aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="m6 6 12 12M18 6 6 18"/></svg></button>
+        <div class="modal-logo"><img src="assets/proj-pomodoro.png" alt="Pomodoro" /></div>
+        <span class="chip" style="margin-bottom:14px;"><span class="dot warn"></span> Em desenvolvimento</span>
+        <h3>IruyCode Pomodoro</h3>
+        <p class="desc">App de produtividade baseada na técnica Pomodoro. Gere o teu tempo, organiza tarefas e aumenta a produtividade com um sistema intuitivo e personalizável.</p>
+        <ul class="feature-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></svg> Temporizador Pomodoro personalizado</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></svg> Lista de tarefas integrada</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></svg> Estatísticas de produtividade</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></svg> Integração com Spotify e modo foco</li>
+        </ul>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;"><span class="tag">Laravel</span><span class="tag">Spotify API</span><span class="tag">Real-time</span></div>
+      </div>
+    </div>
+
+    <!-- thumbnail for bundler -->
+    <template id="__bundler_thumbnail">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100" height="100" fill="#080b12"/>
+        <text x="50" y="58" font-family="monospace" font-size="22" fill="#22d3ee" text-anchor="middle" font-weight="700">&lt;/&gt;</text>
+      </svg>
+    </template>
+
+    <div id="tweaks-root"></div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="app.js"></script>
+    <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+    <script type="text/babel" src="tweaks-panel.jsx"></script>
+    <script type="text/babel" src="tweaks-app.jsx"></script>
+    <script>
+      // build tech marquee (duplicated for seamless loop)
+      (function () {
+        const techs = ["Laravel","PHP","JavaScript","React","Node.js","Express","MySQL","MongoDB","Tailwind CSS","Git","REST APIs","IoT","NGINX","Astro"];
+        const track = document.getElementById("mq");
+        if (!track) return;
+        const make = () => techs.map((t) => `<span class="marquee-item"><span class="gd"></span>${t}</span>`).join("");
+        track.innerHTML = make() + make();
+      })();
+    </script>
   </body>
 </html>
