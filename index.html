@@ -12,7 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/styles.css?v=20260707e" />
   </head>
   <body data-motion="on">
     <div class="bg-field"></div>
@@ -26,27 +26,40 @@
       <div class="dock-nav">
         <a class="dock-item" data-target="home" href="#home" aria-label="Início">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 11.5 12 4l9 7.5M5 10v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-9"/></svg>
-          <span class="tip">Início</span>
+          <span class="tip" data-i18n="nav.home">Início</span>
         </a>
         <a class="dock-item" data-target="about" href="#about" aria-label="Sobre">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="4"/><path stroke-linecap="round" d="M4 20c0-3.3 3.6-6 8-6s8 2.7 8 6"/></svg>
-          <span class="tip">Sobre</span>
+          <span class="tip" data-i18n="nav.about">Sobre</span>
         </a>
         <a class="dock-item" data-target="timeline" href="#timeline" aria-label="Percurso">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" d="M12 3v18"/><circle cx="12" cy="7" r="2.2"/><circle cx="12" cy="17" r="2.2"/></svg>
-          <span class="tip">Percurso</span>
+          <span class="tip" data-i18n="nav.timeline">Percurso</span>
         </a>
         <a class="dock-item" data-target="works" href="#works" aria-label="Trabalhos">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="7" width="18" height="13" rx="2"/><path stroke-linecap="round" d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-          <span class="tip">Trabalhos</span>
+          <span class="tip" data-i18n="nav.works">Trabalhos</span>
         </a>
         <a class="dock-item" data-target="contact" href="#contact" aria-label="Contacto">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="5" width="18" height="14" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="m4 7 8 6 8-6"/></svg>
-          <span class="tip">Contacto</span>
+          <span class="tip" data-i18n="nav.contact">Contacto</span>
         </a>
       </div>
 
       <div class="dock-foot">
+        <!-- ===== language switcher ===== -->
+        <div class="dock-lang">
+          <button class="dock-lang-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Idioma / Language">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" d="M3 12h18M12 3c2.5 2.5 3.8 5.6 3.8 9S14.5 18.5 12 21c-2.5-2.5-3.8-5.6-3.8-9S9.5 5.5 12 3Z"/></svg>
+            <span class="dock-lang-cur">PT</span>
+          </button>
+          <div class="dock-lang-menu" role="menu">
+            <button type="button" data-lang="pt" role="menuitem"><span class="code">PT</span> Português</button>
+            <button type="button" data-lang="en" role="menuitem"><span class="code">EN</span> English</button>
+            <button type="button" data-lang="es" role="menuitem"><span class="code">ES</span> Español</button>
+          </div>
+        </div>
+
         <a href="https://github.com/IruyCode" target="_blank" rel="noopener" aria-label="GitHub">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.79-.26.79-.58v-2.23c-3.34.72-4.03-1.42-4.03-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.72.08-.72 1.21.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.31.76-1.6-2.66-.31-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.21-.13-.31-.54-1.52.12-3.18 0 0 1-.32 3.29 1.23.96-.27 2-.4 3.02-.4s2.06.14 3.02.4c2.29-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.87.12 3.18.77.83 1.24 1.9 1.24 3.21 0 4.61-2.81 5.62-5.49 5.93.43.37.82 1.1.82 2.22v3.3c0 .32.19.7.8.58C20.57 21.8 24 17.3 24 12 24 5.37 18.63 0 12 0z"/></svg>
         </a>
@@ -63,31 +76,31 @@
           <div class="hero-grid">
             <div class="hero-copy">
               <div class="status-pill reveal">
-                <span class="dot live"></span> Disponível para novos projetos
+                <span class="dot live"></span> <span data-i18n="hero.status">Disponível para novos projetos</span>
               </div>
               <h1 class="reveal" data-d="1">
                 Yuri <span class="accent">Banzato</span>
               </h1>
               <div class="role reveal" data-d="2"><span id="role"></span><span class="caret" aria-hidden="true">▋</span></div>
-              <p class="lede reveal" data-d="3">
+              <p class="lede reveal" data-d="3" data-i18n="hero.lede">
                 Construo aplicações web modernas de ponta a ponta — do schema da
                 base de dados à interface. Acredito que boas ideias merecem
                 ganhar vida, e eu programo-as.
               </p>
               <div class="hero-cta reveal" data-d="4">
                 <a class="btn btn-primary" href="#works">
-                  Ver trabalhos
+                  <span data-i18n="hero.cta_works">Ver trabalhos</span>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
                 </a>
                 <a class="btn btn-ghost" href="#contact">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="m4 7 8 6 8-6"/></svg>
-                  Contactar
+                  <span data-i18n="hero.cta_contact">Contactar</span>
                 </a>
               </div>
               <div class="hero-stats reveal" data-d="4">
-                <div><div class="n">5+</div><div class="l">anos a programar</div></div>
-                <div><div class="n">2</div><div class="l">estágios full-stack</div></div>
-                <div><div class="n">∞</div><div class="l">curiosidade</div></div>
+                <div><div class="n">5+</div><div class="l" data-i18n="hero.stat1">anos a programar</div></div>
+                <div><div class="n">2</div><div class="l" data-i18n="hero.stat2">estágios full-stack</div></div>
+                <div><div class="n">∞</div><div class="l" data-i18n="hero.stat3">curiosidade</div></div>
               </div>
             </div>
 
@@ -131,62 +144,94 @@
       <section id="about" class="section-pad">
         <div class="wrap">
           <div class="sec-head reveal">
-            <span class="kicker">// quem_sou.md</span>
-            <h2 class="sec-title">Transformo ideias em<br />produtos reais e funcionais</h2>
+            <span class="kicker" data-i18n="about.kicker">// quem_sou.md</span>
+            <h2 class="sec-title" data-i18n="about.title">Transformo ideias em<br />produtos reais e funcionais</h2>
           </div>
 
           <div class="about-grid">
             <div class="card about-card reveal">
-              <div class="code-comment">/* sobre */</div>
-              <h3>Entusiasta de tecnologia, focado em web</h3>
-              <p>
+              <div class="code-comment" data-i18n="about.comment">/* sobre */</div>
+              <h3 data-i18n="about.h3">Entusiasta de tecnologia, focado em web</h3>
+              <p data-i18n="about.p">
                 Jovem desenvolvedor com base sólida em desenvolvimento web full-stack.
                 Participo de eventos e formações em busca constante de aprender e evoluir.
-                Atualmente aprofundo os meus conhecimentos num curso de especialização em
-                desenvolvimento de software, com o objetivo de seguir para Engenharia Informática.
+                Concluí o CTeSP em Desenvolvimento de Software (nível 5 do QNQ/QEQ europeu)
+                e atualmente frequento a licenciatura em Engenharia Informática.
               </p>
               <div class="chip-row">
-                <span class="chip"><span class="dot" style="background:var(--accent)"></span> Lisboa, Portugal</span>
-                <span class="chip">🎓 CTeSP em Desenvolvimento de Software</span>
-                <span class="chip">PT · EN · ES</span>
+                <span class="chip"><span class="dot" style="background:var(--accent)"></span> <span data-i18n="about.chip_loc">Lisboa, Portugal</span></span>
+                <span class="chip" data-i18n="about.chip_edu">🎓 Licenciatura em Engenharia Informática</span>
               </div>
             </div>
 
             <div class="card about-card reveal" data-d="1">
               <div class="code-comment">/* stack */</div>
-              <h3 style="margin-bottom:24px;">Competências técnicas</h3>
+              <h3 style="margin-bottom:24px;" data-i18n="about.stack_h3">Competências técnicas</h3>
 
-              <div class="skill-group">
-                <span class="lbl">// back-end</span>
-                <div class="skill-bars">
-                  <div class="skill"><div class="top"><span class="name">PHP · Laravel</span><span class="pct">90%</span></div><div class="bar"><i style="width:90%"></i></div></div>
-                  <div class="skill"><div class="top"><span class="name">MySQL</span><span class="pct">85%</span></div><div class="bar"><i style="width:85%"></i></div></div>
-                  <div class="skill"><div class="top"><span class="name">Node · Express</span><span class="pct">78%</span></div><div class="bar"><i style="width:78%"></i></div></div>
+              <div class="skill-areas">
+                <div class="skill-area fe">
+                  <div class="skill-area-head">
+                    <span class="skill-area-ico">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="4" width="18" height="14" rx="2"/><path stroke-linecap="round" d="M3 9h18M8 22h8M12 18v4"/></svg>
+                    </span>
+                    <span class="skill-area-title" data-i18n="about.area_fe">Frontend</span>
+                  </div>
+                  <div class="tag-row">
+                    <span class="tag">React</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Tailwind CSS</span>
+                    <span class="tag">HTML · CSS</span>
+                    <span class="tag">SPAs</span>
+                  </div>
+                </div>
+
+                <div class="skill-area be">
+                  <div class="skill-area-head">
+                    <span class="skill-area-ico">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><ellipse cx="12" cy="6" rx="8" ry="3"/><path stroke-linecap="round" d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>
+                    </span>
+                    <span class="skill-area-title" data-i18n="about.area_be">Backend</span>
+                  </div>
+                  <div class="tag-row">
+                    <span class="tag">PHP · Laravel</span>
+                    <span class="tag">Node · Express</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">MongoDB</span>
+                    <span class="tag">REST · OAuth2</span>
+                  </div>
+                </div>
+
+                <div class="skill-area ops">
+                  <div class="skill-area-head">
+                    <span class="skill-area-ico">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="4" width="18" height="16" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="m7 9 3 3-3 3M13 15h4"/></svg>
+                    </span>
+                    <span class="skill-area-title" data-i18n="about.area_ops">DevOps &amp; Infra</span>
+                  </div>
+                  <div class="tag-row">
+                    <span class="tag">NGINX</span>
+                    <span class="tag">Webmin</span>
+                    <span class="tag">OVH</span>
+                    <span class="tag">Linux</span>
+                    <span class="tag">Git Flow</span>
+                  </div>
+                </div>
+
+                <div class="skill-area tools">
+                  <div class="skill-area-head">
+                    <span class="skill-area-ico">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-6 6 2 2 6-6a4 4 0 0 0 5.4-5.4l-2.5 2.5-2-2 2.5-2.5Z"/></svg>
+                    </span>
+                    <span class="skill-area-title" data-i18n="about.area_tools">Ferramentas &amp; Extra</span>
+                  </div>
+                  <div class="tag-row">
+                    <span class="tag">IoT</span>
+                    <span class="tag">Dashboards real-time</span>
+                    <span class="tag">UX/UI responsivo</span>
+                    <span class="tag">Git</span>
+                  </div>
                 </div>
               </div>
-
-              <div class="skill-group">
-                <span class="lbl">// front-end (MERN)</span>
-                <div class="skill-bars">
-                  <div class="skill"><div class="top"><span class="name">JavaScript</span><span class="pct">88%</span></div><div class="bar"><i style="width:88%"></i></div></div>
-                  <div class="skill"><div class="top"><span class="name">React</span><span class="pct">82%</span></div><div class="bar"><i style="width:82%"></i></div></div>
-                  <div class="skill"><div class="top"><span class="name">Tailwind · CSS</span><span class="pct">90%</span></div><div class="bar"><i style="width:90%"></i></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- extra competence chips -->
-          <div class="reveal" data-d="2" style="margin-top:28px;">
-            <span class="lbl block-lbl">// também trabalho com</span>
-            <div class="tag-cloud">
-              <span class="tag">MongoDB</span>
-              <span class="tag">APIs REST · OAuth2</span>
-              <span class="tag">IoT · sistemas conectados</span>
-              <span class="tag">NGINX · Webmin · OVH</span>
-              <span class="tag">SPAs · dashboards real-time</span>
-              <span class="tag">Git Flow</span>
-              <span class="tag">UX/UI responsivo</span>
             </div>
           </div>
         </div>
@@ -196,16 +241,16 @@
       <section id="timeline" class="section-pad">
         <div class="wrap">
           <div class="sec-head reveal">
-            <span class="kicker">// percurso.log</span>
-            <h2 class="sec-title">Experiência, formação e eventos</h2>
-            <p class="sec-sub">Um percurso construído entre estágios reais, formação contínua e eventos de tecnologia.</p>
+            <span class="kicker" data-i18n="timeline.kicker">// percurso.log</span>
+            <h2 class="sec-title" data-i18n="timeline.title">Experiência, formação e eventos</h2>
+            <p class="sec-sub" data-i18n="timeline.sub">Um percurso construído entre estágios reais, formação contínua e eventos de tecnologia.</p>
           </div>
 
           <div class="tl-filters reveal">
-            <button class="tl-filter active" data-cat="all">Tudo <span class="tl-count"></span></button>
-            <button class="tl-filter" data-cat="work">Experiência <span class="tl-count"></span></button>
-            <button class="tl-filter" data-cat="edu">Educação <span class="tl-count"></span></button>
-            <button class="tl-filter" data-cat="event">Eventos <span class="tl-count"></span></button>
+            <button class="tl-filter active" data-cat="all"><span data-i18n="timeline.f_all">Tudo</span> <span class="tl-count"></span></button>
+            <button class="tl-filter" data-cat="work"><span data-i18n="timeline.f_work">Experiência</span> <span class="tl-count"></span></button>
+            <button class="tl-filter" data-cat="edu"><span data-i18n="timeline.f_edu">Educação</span> <span class="tl-count"></span></button>
+            <button class="tl-filter" data-cat="event"><span data-i18n="timeline.f_event">Eventos</span> <span class="tl-count"></span></button>
           </div>
 
           <div class="timeline">
@@ -214,10 +259,10 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path stroke-linecap="round" d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
               </span>
               <div class="card tl-card work">
-                <div class="tl-meta"><span class="tl-cat work">Experiência</span><span class="tl-period">2023 — 2025</span></div>
-                <h4>Full-Stack &amp; Administração de Sistemas</h4>
-                <div class="tl-org">ISPT Group · Departamento de C&amp;D</div>
-                <p>Desenvolvimento de aplicações web, projetos IoT e sistemas internos, além da manutenção do servidor do departamento. O foco do setor era criar produtos inovadores para otimizar processos e aumentar a eficiência da empresa.</p>
+                <div class="tl-meta"><span class="tl-cat work" data-i18n="timeline.cat_work">Experiência</span><span class="tl-period" data-i18n="timeline.i0_period">Mar 2026 — Atualmente</span></div>
+                <h4 data-i18n="timeline.i0_h4">Desenvolvimento de Software &amp; Integração de Sistemas</h4>
+                <div class="tl-org"><a href="https://www.inout.pt" target="_blank" rel="noopener">InOut — Automação e Controlo</a> · Lisboa</div>
+                <p data-i18n="timeline.i0_p">Desenvolvimento de soluções internas e externas para clientes, integração com soluções de automação em articulação com outras unidades da empresa e integração com sistemas SCADA, num ambiente de automação industrial e telegestão.</p>
               </div>
             </div>
 
@@ -226,10 +271,22 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path stroke-linecap="round" d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
               </span>
               <div class="card tl-card work">
-                <div class="tl-meta"><span class="tl-cat work">Experiência</span><span class="tl-period">2020 — 2021</span></div>
-                <h4>Estágio de Desenvolvedor Full-Stack</h4>
+                <div class="tl-meta"><span class="tl-cat work" data-i18n="timeline.cat_work">Experiência</span><span class="tl-period">2023 — 2025</span></div>
+                <h4 data-i18n="timeline.i1_h4">Full-Stack &amp; Administração de Sistemas</h4>
+                <div class="tl-org" data-i18n="timeline.i1_org">ISPT Group · Departamento de C&amp;D</div>
+                <p data-i18n="timeline.i1_p">Desenvolvimento de aplicações web, projetos IoT e sistemas internos, além da manutenção do servidor do departamento. O foco do setor era criar produtos inovadores para otimizar processos e aumentar a eficiência da empresa.</p>
+              </div>
+            </div>
+
+            <div class="tl-item reveal" data-cat="work">
+              <span class="tl-node work" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path stroke-linecap="round" d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+              </span>
+              <div class="card tl-card work">
+                <div class="tl-meta"><span class="tl-cat work" data-i18n="timeline.cat_work">Experiência</span><span class="tl-period">2020 — 2021</span></div>
+                <h4 data-i18n="timeline.i2_h4">Estágio de Desenvolvedor Full-Stack</h4>
                 <div class="tl-org">ISTEC · Lisboa</div>
-                <p>Construção de uma loja online com Laravel — login, registos, gestão de produtos, encomendas e stock. O meu primeiro contacto real com desenvolvimento web completo, ganho no dia a dia com projetos reais.</p>
+                <p data-i18n="timeline.i2_p">Construção de uma loja online com Laravel — login, registos, gestão de produtos, encomendas e stock. O meu primeiro contacto real com desenvolvimento web completo, ganho no dia a dia com projetos reais.</p>
               </div>
             </div>
 
@@ -238,10 +295,10 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m22 10-10-5L2 10l10 5 10-5Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>
               </span>
               <div class="card tl-card edu">
-                <div class="tl-meta"><span class="tl-cat edu">Educação</span><span class="tl-period">2024 — Atualmente</span></div>
-                <h4>CTeSP — Desenvolvimento de Software</h4>
+                <div class="tl-meta"><span class="tl-cat edu" data-i18n="timeline.cat_edu">Educação</span><span class="tl-period" data-i18n="timeline.e0_period">Set 2026 — Atualmente</span></div>
+                <h4 data-i18n="timeline.e0_h4">Licenciatura — Engenharia Informática</h4>
                 <div class="tl-org">Lisboa</div>
-                <p>Curso técnico para fortalecer a base na área e, no futuro, seguir para a licenciatura em Engenharia Informática.</p>
+                <p data-i18n="timeline.e0_p">Prosseguimento de estudos após o CTeSP, através do concurso especial de acesso, rumo ao grau de engenheiro informático (nível 6 do QNQ/QEQ).</p>
               </div>
             </div>
 
@@ -250,10 +307,22 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m22 10-10-5L2 10l10 5 10-5Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>
               </span>
               <div class="card tl-card edu">
-                <div class="tl-meta"><span class="tl-cat edu">Educação</span><span class="tl-period">2021 — 2022</span></div>
+                <div class="tl-meta"><span class="tl-cat edu" data-i18n="timeline.cat_edu">Educação</span><span class="tl-period">2024 — 2026</span></div>
+                <h4 data-i18n="timeline.i3_h4">CTeSP — Desenvolvimento de Software</h4>
+                <div class="tl-org">Lisboa</div>
+                <p data-i18n="timeline.i3_p">Curso técnico superior profissional — formação superior de nível 5 do QNQ/QEQ europeu (120 ECTS), com estágio integrado — que fortaleceu a base na área e abriu caminho para a licenciatura em Engenharia Informática.</p>
+              </div>
+            </div>
+
+            <div class="tl-item reveal" data-cat="edu">
+              <span class="tl-node edu" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m22 10-10-5L2 10l10 5 10-5Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>
+              </span>
+              <div class="card tl-card edu">
+                <div class="tl-meta"><span class="tl-cat edu" data-i18n="timeline.cat_edu">Educação</span><span class="tl-period">2021 — 2022</span></div>
                 <h4>Bytes4Future</h4>
                 <div class="tl-org">Run Code School</div>
-                <p>Programa de desenvolvimento focado em JavaScript, bibliotecas e bases de dados, com atividades diárias em plataforma para reforço da aprendizagem.</p>
+                <p data-i18n="timeline.i4_p">Programa de desenvolvimento focado em JavaScript, bibliotecas e bases de dados, com atividades diárias em plataforma para reforço da aprendizagem.</p>
               </div>
             </div>
 
@@ -262,10 +331,10 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m22 10-10-5L2 10l10 5 10-5Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>
               </span>
               <div class="card tl-card edu">
-                <div class="tl-meta"><span class="tl-cat edu">Educação</span><span class="tl-period">2017 — 2020</span></div>
-                <h4>Técnico em Gestão e Programação de Sistemas Informáticos</h4>
+                <div class="tl-meta"><span class="tl-cat edu" data-i18n="timeline.cat_edu">Educação</span><span class="tl-period">2017 — 2020</span></div>
+                <h4 data-i18n="timeline.i5_h4">Técnico em Gestão e Programação de Sistemas Informáticos</h4>
                 <div class="tl-org">Seomara da Costa Primo</div>
-                <p>Curso profissional com foco em programação (C++/JS), servidores e hardware. Projeto final desenvolvido em Laravel e disponível no GitHub.</p>
+                <p data-i18n="timeline.i5_p">Curso profissional com foco em programação (C++/JS), servidores e hardware. Projeto final desenvolvido em Laravel e disponível no GitHub.</p>
               </div>
             </div>
 
@@ -274,10 +343,10 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path stroke-linecap="round" d="M8 2v4M16 2v4M3 10h18"/></svg>
               </span>
               <div class="card tl-card event">
-                <div class="tl-meta"><span class="tl-cat event">Evento</span><span class="tl-period">2024 · Lisboa</span></div>
+                <div class="tl-meta"><span class="tl-cat event" data-i18n="timeline.cat_event">Evento</span><span class="tl-period">2024 · Lisboa</span></div>
                 <h4>Web Summit</h4>
-                <div class="tl-org">A representar a ISPT Group</div>
-                <p>Uma experiência incrível com contacto direto com várias startups e empresas tecnológicas de todo o mundo.</p>
+                <div class="tl-org" data-i18n="timeline.i6_org">A representar a ISPT Group</div>
+                <p data-i18n="timeline.i6_p">Uma experiência incrível com contacto direto com várias startups e empresas tecnológicas de todo o mundo.</p>
               </div>
             </div>
 
@@ -286,10 +355,10 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path stroke-linecap="round" d="M8 2v4M16 2v4M3 10h18"/></svg>
               </span>
               <div class="card tl-card event">
-                <div class="tl-meta"><span class="tl-cat event">Evento</span><span class="tl-period">2019 · Porto</span></div>
-                <h4>Robot Party — 9.ª edição</h4>
-                <div class="tl-org">Competição de robótica</div>
-                <p>Várias escolas reuniram-se para criar robôs com Arduino e competir em diferentes provas e circuitos.</p>
+                <div class="tl-meta"><span class="tl-cat event" data-i18n="timeline.cat_event">Evento</span><span class="tl-period">2019 · Porto</span></div>
+                <h4 data-i18n="timeline.i7_h4">Robot Party — 9.ª edição</h4>
+                <div class="tl-org" data-i18n="timeline.i7_org">Competição de robótica</div>
+                <p data-i18n="timeline.i7_p">Várias escolas reuniram-se para criar robôs com Arduino e competir em diferentes provas e circuitos.</p>
               </div>
             </div>
 
@@ -298,10 +367,10 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path stroke-linecap="round" d="M8 2v4M16 2v4M3 10h18"/></svg>
               </span>
               <div class="card tl-card event">
-                <div class="tl-meta"><span class="tl-cat event">Evento</span><span class="tl-period">2018 · Lisboa</span></div>
-                <h4>Apps for Good — 4.ª edição</h4>
+                <div class="tl-meta"><span class="tl-cat event" data-i18n="timeline.cat_event">Evento</span><span class="tl-period">2018 · Lisboa</span></div>
+                <h4 data-i18n="timeline.i8_h4">Apps for Good — 4.ª edição</h4>
                 <div class="tl-org">App "Saving"</div>
-                <p>Primeira versão de uma app pensada para ajudar os utilizadores a poupar dinheiro com base nos seus hábitos de consumo.</p>
+                <p data-i18n="timeline.i8_p">Primeira versão de uma app pensada para ajudar os utilizadores a poupar dinheiro com base nos seus hábitos de consumo.</p>
               </div>
             </div>
           </div>
@@ -312,9 +381,9 @@
       <section id="works" class="section-pad">
         <div class="wrap">
           <div class="sec-head reveal">
-            <span class="kicker">// trabalho_em_destaque</span>
-            <h2 class="sec-title">Trabalhos realizados</h2>
-            <p class="sec-sub">Projetos entregues para clientes e eventos reais.</p>
+            <span class="kicker" data-i18n="works.kicker">// trabalho_em_destaque</span>
+            <h2 class="sec-title" data-i18n="works.title">Trabalhos realizados</h2>
+            <p class="sec-sub" data-i18n="works.sub">Projetos entregues para clientes e eventos reais.</p>
           </div>
 
           <div class="card hover work-feature reveal">
@@ -332,24 +401,24 @@
             </div>
             <div class="work-body">
               <div class="meta">
-                <span class="chip accent"><span class="dot" style="background:var(--ok)"></span> Concluído</span>
+                <span class="chip accent"><span class="dot" style="background:var(--ok)"></span> <span data-i18n="works.done">Concluído</span></span>
                 <span class="tl-period">2025</span>
               </div>
               <h3>JediconPT</h3>
-              <p>
+              <p data-i18n="works.desc">
                 Estive envolvido na organização da primeira Jedicon em Portugal, um evento
                 dedicado ao universo Star Wars. Fui responsável pelo desenvolvimento do site,
                 sistema de bilhetes, áreas interativas como quiz e sorteio, e um dashboard
                 completo para os organizadores gerirem o evento.
               </p>
               <div class="work-tags">
-                <span class="tag">Site institucional</span>
-                <span class="tag">Sistema de bilhetes</span>
-                <span class="tag">Quiz &amp; sorteio</span>
-                <span class="tag">Dashboard admin</span>
+                <span class="tag" data-i18n="works.tag1">Site institucional</span>
+                <span class="tag" data-i18n="works.tag2">Sistema de bilhetes</span>
+                <span class="tag" data-i18n="works.tag3">Quiz &amp; sorteio</span>
+                <span class="tag" data-i18n="works.tag4">Dashboard admin</span>
               </div>
               <a class="btn btn-primary" href="https://jedicon.pt" target="_blank" rel="noopener" style="align-self:flex-start;">
-                Visitar site
+                <span data-i18n="works.visit">Visitar site</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M9 7h8v8"/></svg>
               </a>
             </div>
@@ -360,8 +429,8 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12M6 12h12"/></svg>
             </div>
             <div>
-              <h4>Novos trabalhos a caminho</h4>
-              <p>Estou sempre a construir. Em breve mais projetos entregues aparecem por aqui.</p>
+              <h4 data-i18n="works.soon_h4">Novos trabalhos a caminho</h4>
+              <p data-i18n="works.soon_p">Estou sempre a construir. Em breve mais projetos entregues aparecem por aqui.</p>
             </div>
           </div>
         </div>
@@ -371,21 +440,21 @@
       <section id="contact" class="section-pad">
         <div class="wrap">
           <div class="sec-head reveal">
-            <span class="kicker">// vamos_conversar()</span>
-            <h2 class="sec-title">Tens um projeto em mente?</h2>
-            <p class="sec-sub">Envia-me uma mensagem — respondo normalmente em 24 horas.</p>
+            <span class="kicker" data-i18n="contact.kicker">// vamos_conversar()</span>
+            <h2 class="sec-title" data-i18n="contact.title">Tens um projeto em mente?</h2>
+            <p class="sec-sub" data-i18n="contact.sub">Envia-me uma mensagem — respondo normalmente em 24 horas.</p>
           </div>
 
           <div class="contact-grid">
             <form class="card form-card reveal" id="contactForm">
               <div class="field-row">
-                <div class="field"><label for="name">nome</label><input id="name" name="name" type="text" placeholder="O teu nome" required /></div>
-                <div class="field"><label for="email">email</label><input id="email" name="email" type="email" placeholder="tu@email.com" required /></div>
+                <div class="field"><label for="name" data-i18n="contact.l_name">nome</label><input id="name" name="name" type="text" placeholder="O teu nome" data-i18n-ph="contact.ph_name" required /></div>
+                <div class="field"><label for="email" data-i18n="contact.l_email">email</label><input id="email" name="email" type="email" placeholder="tu@email.com" data-i18n-ph="contact.ph_email" required /></div>
               </div>
-              <div class="field"><label for="subject">assunto</label><input id="subject" name="subject" type="text" placeholder="Assunto da mensagem" required /></div>
-              <div class="field"><label for="message">mensagem</label><textarea id="message" name="message" placeholder="Conta-me sobre o teu projeto..." required></textarea></div>
+              <div class="field"><label for="subject" data-i18n="contact.l_subject">assunto</label><input id="subject" name="subject" type="text" placeholder="Assunto da mensagem" data-i18n-ph="contact.ph_subject" required /></div>
+              <div class="field"><label for="message" data-i18n="contact.l_message">mensagem</label><textarea id="message" name="message" placeholder="Conta-me sobre o teu projeto..." data-i18n-ph="contact.ph_message" required></textarea></div>
               <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center;">
-                Enviar mensagem
+                <span data-i18n="contact.send">Enviar mensagem</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m22 2-7 20-4-9-9-4 20-7Z"/></svg>
               </button>
               <p class="form-status" id="formStatus"></p>
@@ -393,7 +462,7 @@
 
             <div class="reveal" data-d="1">
               <div class="card info-card">
-                <h3>Informações</h3>
+                <h3 data-i18n="contact.info">Informações</h3>
                 <a class="info-row" href="mailto:yuribanzatodev@gmail.com">
                   <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="m4 7 8 6 8-6"/></svg></span>
                   yuribanzatodev@gmail.com
@@ -404,12 +473,12 @@
                 </a>
                 <div class="info-row">
                   <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
-                  Lisboa, Portugal
+                  <span data-i18n="contact.loc">Lisboa, Portugal</span>
                 </div>
               </div>
 
               <div class="card info-card" style="margin-bottom:0;">
-                <h3>Redes</h3>
+                <h3 data-i18n="contact.net">Redes</h3>
                 <div class="socials">
                   <a class="social" href="https://www.linkedin.com/in/yuri-gabriel-banzato-3a702b1b4" target="_blank" rel="noopener">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM7 19H4v-9h3v9zM5.5 8.7a1.73 1.73 0 1 1 0-3.46 1.73 1.73 0 0 1 0 3.46zM20 19h-3v-4.79c0-2.93-3-2.71-3 0V19h-3v-9h3v1.3c1.4-2.58 6-2.78 6 2.48V19z"/></svg>
@@ -436,37 +505,38 @@
           <div class="footer-grid">
             <div>
               <div class="brand">&lt;IruyCode/&gt;</div>
-              <p>Desenvolvedor web full-stack apaixonado por criar soluções inovadoras e experiências digitais únicas.</p>
+              <p data-i18n="footer.tagline">Desenvolvedor web full-stack apaixonado por criar soluções inovadoras e experiências digitais únicas.</p>
             </div>
             <div>
-              <h4>Navegação</h4>
+              <h4 data-i18n="footer.nav_h4">Navegação</h4>
               <ul>
-                <li><a href="#home">Início</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#timeline">Percurso</a></li>
-                <li><a href="#works">Trabalhos</a></li>
-                <li><a href="#contact">Contacto</a></li>
+                <li><a href="#home" data-i18n="nav.home">Início</a></li>
+                <li><a href="#about" data-i18n="nav.about">Sobre</a></li>
+                <li><a href="#timeline" data-i18n="nav.timeline">Percurso</a></li>
+                <li><a href="#works" data-i18n="nav.works">Trabalhos</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contacto</a></li>
               </ul>
             </div>
             <div>
-              <h4>Serviços</h4>
+              <h4 data-i18n="footer.services_h4">Serviços</h4>
               <ul>
                 <li>Web Apps</li>
                 <li>Dashboards</li>
                 <li>IoT</li>
-                <li>Eventos</li>
+                <li data-i18n="footer.srv_events">Eventos</li>
                 <li>UX/UI</li>
               </ul>
             </div>
           </div>
           <div class="footer-bottom">
-            <span>© 2025 Yuri Banzato · IruyCode. Todos os direitos reservados.</span>
-            <span>Construído com ☕ e código.</span>
+            <span data-i18n="footer.rights">© 2025 Yuri Banzato · IruyCode. Todos os direitos reservados.</span>
+            <span data-i18n="footer.built">Construído com ☕ e código.</span>
           </div>
         </div>
       </footer>
     </div>
 
-    <script src="/app.js" defer></script>
+    <script src="/i18n.js?v=20260707e" defer></script>
+    <script src="/app.js?v=20260707e" defer></script>
   </body>
 </html>

@@ -18,36 +18,59 @@
     track.innerHTML = make() + make();
   })();
 
-  /* ---------- role typewriter ---------- */
+  /* ---------- role typewriter (i18n-aware) ---------- */
   (function typewriter() {
     const el = $("#role");
     if (!el) return;
-    const roles = [
+
+    const fallback = [
       "Desenvolvedor Full-Stack",
       "Laravel · React · Node",
       "Construtor de produtos web",
       "Entusiasta de IoT & sistemas",
     ];
-    if (!motionOn) { el.textContent = roles[0]; return; }
-    let r = 0, i = 0, deleting = false;
+    const getRoles = () => {
+      const r = window.I18N && window.I18N.t("hero.roles");
+      return Array.isArray(r) && r.length ? r : fallback;
+    };
+
+    let roles = getRoles();
+    let r = 0, i = 0, deleting = false, timer = null;
+
+    if (!motionOn) {
+      el.textContent = roles[0];
+      if (window.I18N) window.I18N.onChange(() => { el.textContent = getRoles()[0]; });
+      return;
+    }
+
     function tick() {
-      const word = roles[r];
+      const word = roles[r] || "";
       i += deleting ? -1 : 1;
       el.textContent = word.slice(0, i);
       let delay = deleting ? 45 : 90;
       if (!deleting && i === word.length) { delay = 1800; deleting = true; }
       else if (deleting && i === 0) { deleting = false; r = (r + 1) % roles.length; delay = 350; }
-      setTimeout(tick, delay);
+      timer = setTimeout(tick, delay);
     }
     tick();
+
+    // reinicia com os novos cargos quando o idioma muda
+    if (window.I18N) {
+      window.I18N.onChange(() => {
+        roles = getRoles();
+        r = 0; i = 0; deleting = false;
+        clearTimeout(timer);
+        el.textContent = "";
+        tick();
+      });
+    }
   })();
 
-  /* ---------- reveal on scroll + skill bars ---------- */
+  /* ---------- reveal on scroll ---------- */
   (function reveal() {
     const items = $$(".reveal");
     if (!("IntersectionObserver" in window) || !motionOn) {
       items.forEach((el) => el.classList.add("visible"));
-      $$(".skill .bar i").forEach((b) => (b.style.width = b.style.width));
       return;
     }
     const io = new IntersectionObserver(
@@ -62,25 +85,6 @@
       { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
     );
     items.forEach((el) => io.observe(el));
-
-    // animate skill bars when the about section enters view
-    const about = $("#about");
-    if (about) {
-      const bars = $$(".skill .bar i", about).map((i) => ({ el: i, w: i.style.width }));
-      bars.forEach((b) => (b.el.style.width = "0"));
-      const sio = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              bars.forEach((b, idx) => setTimeout(() => (b.el.style.width = b.w), idx * 90));
-              sio.disconnect();
-            }
-          });
-        },
-        { threshold: 0.25 }
-      );
-      sio.observe(about);
-    }
   })();
 
   /* ---------- dock: scroll progress + active section ---------- */
@@ -183,10 +187,11 @@
     const form = $("#contactForm");
     if (!form) return;
     const status = $("#formStatus");
+    const msg = (k, fb) => (window.I18N && window.I18N.t("contact." + k)) || fb;
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       status.className = "form-status pending";
-      status.textContent = "A enviar...";
+      status.textContent = msg("st_sending", "A enviar...");
       const payload = {
         client_id: "iruycode",
         api_key: "IRUYCODE-API-KEY-93afc2b",
@@ -204,16 +209,16 @@
         const data = await res.json();
         if (data.success) {
           status.className = "form-status ok";
-          status.textContent = "Mensagem enviada com sucesso! ✔";
+          status.textContent = msg("st_ok", "Mensagem enviada com sucesso! ✔");
           form.reset();
         } else {
           status.className = "form-status err";
-          status.textContent = "Erro ao enviar: " + (data.error || "tenta novamente.");
+          status.textContent = msg("st_err", "Erro ao enviar: ") + (data.error || msg("st_err_generic", "tenta novamente."));
         }
       } catch (err) {
         console.error(err);
         status.className = "form-status err";
-        status.textContent = "Erro de conexão com o servidor.";
+        status.textContent = msg("st_conn", "Erro de conexão com o servidor.");
       }
     });
   })();
