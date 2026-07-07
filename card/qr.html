@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>QR Code · Yuri Banzato — IruyCode</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Manrope:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #080b12;
+        --panel: rgba(255, 255, 255, 0.035);
+        --line: rgba(255, 255, 255, 0.09);
+        --line-strong: rgba(255, 255, 255, 0.16);
+        --text: #e7ecf6;
+        --text-dim: #a5b0c4;
+        --text-faint: #6a7789;
+        --accent: #22d3ee;
+        --accent-2: #7c8bff;
+        --accent-soft: rgba(34, 211, 238, 0.14);
+      }
+      * { box-sizing: border-box; margin: 0; }
+      body {
+        min-height: 100vh;
+        background:
+          radial-gradient(680px 420px at 85% -10%, rgba(124, 139, 255, 0.16), transparent 60%),
+          radial-gradient(560px 380px at 8% 8%, rgba(34, 211, 238, 0.13), transparent 55%),
+          var(--bg);
+        color: var(--text);
+        font-family: "Manrope", system-ui, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 28px 18px;
+        -webkit-font-smoothing: antialiased;
+      }
+      .panel {
+        width: 100%;
+        max-width: 460px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 32px 28px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+      }
+      .kicker {
+        font-family: "JetBrains Mono", ui-monospace, monospace;
+        font-size: 12.5px;
+        color: var(--accent);
+      }
+      h1 {
+        font-family: "Space Grotesk", system-ui, sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        margin-top: 8px;
+      }
+      .sub { color: var(--text-dim); font-size: 14px; margin-top: 8px; }
+      .qr-frame {
+        display: inline-block;
+        background: #fff;
+        border-radius: 18px;
+        padding: 14px;
+        margin-top: 22px;
+        box-shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.9);
+      }
+      .qr-frame img { display: block; width: 260px; height: 260px; }
+      .url {
+        display: block;
+        font-family: "JetBrains Mono", ui-monospace, monospace;
+        font-size: 13px;
+        color: var(--accent);
+        text-decoration: none;
+        margin-top: 16px;
+        word-break: break-all;
+      }
+      .url:hover { text-decoration: underline; }
+      .actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 22px; }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: inherit;
+        font-weight: 600;
+        font-size: 13.5px;
+        padding: 11px 16px;
+        border-radius: 11px;
+        border: 1px solid var(--line-strong);
+        background: var(--panel);
+        color: var(--text);
+        cursor: pointer;
+        text-decoration: none;
+        transition: 0.2s;
+      }
+      .btn svg { width: 15px; height: 15px; }
+      .btn:hover { border-color: var(--accent); color: var(--accent); }
+      .btn.primary {
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        border-color: transparent;
+        color: #04121a;
+      }
+      .btn.primary:hover { transform: translateY(-1px); color: #04121a; }
+      .hint { font-size: 12px; color: var(--text-faint); margin-top: 18px; }
+      .hint a { color: var(--text-faint); }
+      .hint a:hover { color: var(--accent); }
+
+      /* impressão: só o QR + URL, fundo branco */
+      @media print {
+        body { background: #fff; padding: 0; }
+        .panel { background: none; border: none; backdrop-filter: none; max-width: none; }
+        .kicker, .sub, .actions, .hint { display: none; }
+        h1 { color: #000; }
+        .qr-frame { box-shadow: none; border: 1px solid #ddd; }
+        .url { color: #000; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="panel">
+      <span class="kicker">// qr_code.share()</span>
+      <h1>Yuri Banzato · IruyCode</h1>
+      <p class="sub" id="sub">Aponta a câmara para abrir o cartão com portfólio, LinkedIn e GitHub.</p>
+
+      <div class="qr-frame">
+        <img id="qrimg" src="/card/qr.svg" alt="QR code para portfolio.iruycode.com/card/" width="260" height="260" />
+      </div>
+
+      <a class="url" href="/card/">portfolio.iruycode.com/card/</a>
+
+      <div class="actions">
+        <a class="btn primary" href="/card/qr.svg" download="iruycode-qr.svg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v11m0 0 4-4m-4 4-4-4M4 19h16"/></svg>
+          SVG
+        </a>
+        <a class="btn" href="/card/qr.png" download="iruycode-qr.png">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v11m0 0 4-4m-4 4-4-4M4 19h16"/></svg>
+          PNG
+        </a>
+        <button class="btn" type="button" onclick="window.print()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2m-12-3h12v6H6v-6Z"/></svg>
+          <span id="print">Imprimir</span>
+        </button>
+      </div>
+
+      <p class="hint"><span id="hint">SVG para impressão (CV, cartão de visita) · PNG para uso digital.</span> <br /><span id="dest">Destino:</span> <a href="/card/">/card/</a></p>
+    </main>
+
+    <script>
+      (function () {
+        var T = {
+          pt: { sub: "Aponta a câmara para abrir o cartão com portfólio, LinkedIn e GitHub.", print: "Imprimir", hint: "SVG para impressão (CV, cartão de visita) · PNG para uso digital.", dest: "Destino:", alt: "QR code para portfolio.iruycode.com/card/" },
+          en: { sub: "Point your camera to open the card with portfolio, LinkedIn and GitHub.", print: "Print", hint: "SVG for print (CV, business card) · PNG for digital use.", dest: "Destination:", alt: "QR code for portfolio.iruycode.com/card/" },
+          es: { sub: "Apunta la cámara para abrir la tarjeta con portafolio, LinkedIn y GitHub.", print: "Imprimir", hint: "SVG para impresión (CV, tarjeta de visita) · PNG para uso digital.", dest: "Destino:", alt: "Código QR para portfolio.iruycode.com/card/" },
+        };
+        var lang = "pt";
+        try { lang = localStorage.getItem("iruy_lang") || (navigator.language || "pt").slice(0, 2).toLowerCase(); } catch (e) {}
+        if (!T[lang]) lang = "pt";
+        document.documentElement.lang = lang;
+        document.getElementById("sub").textContent = T[lang].sub;
+        document.getElementById("print").textContent = T[lang].print;
+        document.getElementById("hint").textContent = T[lang].hint;
+        document.getElementById("dest").textContent = T[lang].dest;
+        document.getElementById("qrimg").alt = T[lang].alt;
+      })();
+    </script>
+  </body>
+</html>

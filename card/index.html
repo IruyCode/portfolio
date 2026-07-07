@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Yuri Banzato (IruyCode) — links rápidos: portfólio, LinkedIn e GitHub." />
+    <meta name="robots" content="noindex" />
+    <title>Yuri Banzato · IruyCode — Links</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Manrope:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #080b12;
+        --panel: rgba(255, 255, 255, 0.035);
+        --panel-2: rgba(255, 255, 255, 0.07);
+        --line: rgba(255, 255, 255, 0.09);
+        --line-strong: rgba(255, 255, 255, 0.16);
+        --text: #e7ecf6;
+        --text-dim: #a5b0c4;
+        --text-faint: #6a7789;
+        --accent: #22d3ee;
+        --accent-2: #7c8bff;
+        --accent-soft: rgba(34, 211, 238, 0.14);
+        --ok: #34d399;
+      }
+      * { box-sizing: border-box; margin: 0; }
+      html { height: 100%; }
+      body {
+        min-height: 100%; /* cresce com o conteúdo: nada fica cortado acima do scroll em viewports curtos */
+        background:
+          radial-gradient(680px 420px at 85% -10%, rgba(124, 139, 255, 0.16), transparent 60%),
+          radial-gradient(560px 380px at 8% 8%, rgba(34, 211, 238, 0.13), transparent 55%),
+          var(--bg);
+        color: var(--text);
+        font-family: "Manrope", system-ui, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 28px 18px;
+        -webkit-font-smoothing: antialiased;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background-image:
+          linear-gradient(var(--line) 1px, transparent 1px),
+          linear-gradient(90deg, var(--line) 1px, transparent 1px);
+        background-size: 52px 52px;
+        mask-image: radial-gradient(circle at 50% 20%, #000 0%, transparent 70%);
+        opacity: 0.35;
+      }
+      .card {
+        position: relative;
+        width: 100%;
+        max-width: 420px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 34px 26px 26px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 40px 90px -40px rgba(0, 0, 0, 0.9);
+      }
+      .avatar {
+        width: 108px; height: 108px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid transparent;
+        background:
+          linear-gradient(var(--bg), var(--bg)) padding-box,
+          linear-gradient(135deg, var(--accent), var(--accent-2)) border-box;
+        display: block;
+        margin: 0 auto 16px;
+      }
+      h1 {
+        font-family: "Space Grotesk", system-ui, sans-serif;
+        font-weight: 700;
+        font-size: 26px;
+        letter-spacing: -0.02em;
+      }
+      .handle {
+        font-family: "JetBrains Mono", ui-monospace, monospace;
+        font-size: 13px;
+        color: var(--accent);
+        margin-top: 4px;
+      }
+      .tagline { color: var(--text-dim); font-size: 14.5px; margin-top: 10px; }
+      .status {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: "JetBrains Mono", ui-monospace, monospace;
+        font-size: 12px;
+        color: var(--text-dim);
+        padding: 6px 13px;
+        border-radius: 999px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        margin-top: 14px;
+      }
+      .status .dot {
+        width: 8px; height: 8px; border-radius: 50%;
+        background: var(--ok);
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.55); }
+        70% { box-shadow: 0 0 0 8px rgba(52, 211, 153, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+      }
+      .links { display: flex; flex-direction: column; gap: 12px; margin-top: 26px; }
+      .link {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 15px 17px;
+        border-radius: 14px;
+        background: var(--panel);
+        border: 1px solid var(--line-strong);
+        color: var(--text);
+        text-decoration: none;
+        text-align: left;
+        transition: transform 0.2s, border-color 0.2s, background 0.2s;
+      }
+      .link:hover, .link:focus-visible { transform: translateY(-2px); border-color: var(--accent); background: var(--panel-2); }
+      .link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+      .link .ico {
+        width: 42px; height: 42px;
+        flex-shrink: 0;
+        display: grid; place-items: center;
+        border-radius: 11px;
+        background: var(--accent-soft);
+        color: var(--accent);
+      }
+      .link .ico svg { width: 21px; height: 21px; }
+      .link.primary {
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        border-color: transparent;
+        color: #04121a;
+        box-shadow: 0 12px 32px -14px rgba(34, 211, 238, 0.7);
+      }
+      .link.primary .ico { background: rgba(4, 18, 26, 0.18); color: #04121a; }
+      .link.primary .d { color: rgba(4, 18, 26, 0.72); }
+      .link .t { font-weight: 600; font-size: 15.5px; }
+      .link .d { font-size: 12.5px; color: var(--text-faint); font-family: "JetBrains Mono", ui-monospace, monospace; margin-top: 1px; }
+      .link .arrow { margin-left: auto; flex-shrink: 0; opacity: 0.55; }
+      .link .arrow svg { width: 16px; height: 16px; }
+      .foot {
+        margin-top: 24px;
+        font-family: "JetBrains Mono", ui-monospace, monospace;
+        font-size: 11.5px;
+        color: var(--text-faint);
+      }
+      .foot a { color: var(--text-faint); text-decoration: none; }
+      .foot a:hover { color: var(--accent); }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <img class="avatar" src="/imgs/avatar-card.jpg" alt="Yuri Banzato" width="108" height="108" />
+      <h1>Yuri Banzato</h1>
+      <div class="handle">&lt;IruyCode/&gt;</div>
+      <p class="tagline" id="tagline">Desenvolvedor Full-Stack · Lisboa, Portugal</p>
+      <div class="status"><span class="dot"></span> <span id="status">Disponível para novos projetos</span></div>
+
+      <nav class="links" aria-label="Links">
+        <a class="link primary" href="https://portfolio.iruycode.com" >
+          <span class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" d="M3 12h18M12 3c2.5 2.5 3.8 5.6 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.6-3.8-9S9.5 5.5 12 3Z"/></svg>
+          </span>
+          <span>
+            <span class="t" id="l-portfolio">Portfólio</span>
+            <br /><span class="d">portfolio.iruycode.com</span>
+          </span>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </a>
+
+        <a class="link" href="https://www.linkedin.com/in/yuri-gabriel-banzato-3a702b1b4" target="_blank" rel="noopener">
+          <span class="ico">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM7 19H4v-9h3v9zM5.5 8.7a1.73 1.73 0 1 1 0-3.46 1.73 1.73 0 0 1 0 3.46zM20 19h-3v-4.79c0-2.93-3-2.71-3 0V19h-3v-9h3v1.3c1.4-2.58 6-2.78 6 2.48V19z"/></svg>
+          </span>
+          <span>
+            <span class="t">LinkedIn</span>
+            <br /><span class="d">yuri-gabriel-banzato</span>
+          </span>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </a>
+
+        <a class="link" href="https://github.com/IruyCode" target="_blank" rel="noopener">
+          <span class="ico">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.79-.26.79-.58v-2.23c-3.34.72-4.03-1.42-4.03-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.72.08-.72 1.21.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.31.76-1.6-2.66-.31-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.21-.13-.31-.54-1.52.12-3.18 0 0 1-.32 3.29 1.23.96-.27 2-.4 3.02-.4s2.06.14 3.02.4c2.29-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.87.12 3.18.77.83 1.24 1.9 1.24 3.21 0 4.61-2.81 5.62-5.49 5.93.43.37.82 1.1.82 2.22v3.3c0 .32.19.7.8.58C20.57 21.8 24 17.3 24 12 24 5.37 18.63 0 12 0z"/></svg>
+          </span>
+          <span>
+            <span class="t">GitHub</span>
+            <br /><span class="d">@IruyCode</span>
+          </span>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </a>
+      </nav>
+
+      <p class="foot">© <span id="yr">2025</span> Yuri Banzato · <a href="https://portfolio.iruycode.com">IruyCode</a></p>
+    </main>
+
+    <script>
+      (function () {
+        // mini i18n — segue a escolha feita no site principal (mesma chave) ou o idioma do browser
+        var T = {
+          pt: { tagline: "Desenvolvedor Full-Stack · Lisboa, Portugal", status: "Disponível para novos projetos", portfolio: "Portfólio" },
+          en: { tagline: "Full-Stack Developer · Lisbon, Portugal", status: "Available for new projects", portfolio: "Portfolio" },
+          es: { tagline: "Desarrollador Full-Stack · Lisboa, Portugal", status: "Disponible para nuevos proyectos", portfolio: "Portafolio" },
+        };
+        var lang = "pt";
+        try { lang = localStorage.getItem("iruy_lang") || (navigator.language || "pt").slice(0, 2).toLowerCase(); } catch (e) {}
+        if (!T[lang]) lang = "pt";
+        document.documentElement.lang = lang;
+        document.getElementById("tagline").textContent = T[lang].tagline;
+        document.getElementById("status").textContent = T[lang].status;
+        document.getElementById("l-portfolio").textContent = T[lang].portfolio;
+        document.getElementById("yr").textContent = new Date().getFullYear();
+      })();
+    </script>
+  </body>
+</html>
